@@ -135,6 +135,7 @@ const renderJob = async (jobId, inputProps) => {
       inputProps: normalized,
       browserExecutable: CHROME_EXECUTABLE,
       chromiumOptions: {
+        headless: true,
         args: [
           "--no-sandbox",
           "--disable-setuid-sandbox",
@@ -142,6 +143,7 @@ const renderJob = async (jobId, inputProps) => {
           "--disable-gpu",
           "--single-process",
           "--no-zygote",
+          "--headless=new",
         ],
       },
     }),
@@ -165,6 +167,7 @@ const renderJob = async (jobId, inputProps) => {
       disableWebSecurity: true,
       enableMultiProcessOnLinux: true,
       gl: "angle",
+      headless: true,
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -172,6 +175,7 @@ const renderJob = async (jobId, inputProps) => {
         "--disable-gpu",
         "--single-process",
         "--no-zygote",
+        "--headless=new",
       ],
     },
     browserExecutable: CHROME_EXECUTABLE,
