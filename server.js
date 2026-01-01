@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 8080;
 const ENTRY_POINT = path.join(process.cwd(), "src", "index.ts");
 const COMPOSITION_ID = "MasterComposition";
 const TMP_DIR = process.env.TMP_DIR || "/tmp";
+const CHROME_PATH = process.env.PUPPETEER_EXECUTABLE_PATH || "/usr/bin/google-chrome-stable";
 const GCS_BUCKET = process.env.GCS_BUCKET;
 const GCS_PREFIX = process.env.GCS_PREFIX || "renders";
 const GCS_SIGNED_URL_TTL_SECONDS = Number(
@@ -127,30 +128,23 @@ const renderJob = async (jobId, inputProps) => {
 
   const serveUrl = getServeUrl();
   
+  console.log(`Using Chrome at: ${CHROME_PATH}`);
+  
   const comps = await withTimeout(
     getCompositions(serveUrl, {
       inputProps: normalized,
+      browserExecutable: CHROME_PATH,
       timeoutInMilliseconds: 120000,
       chromiumOptions: {
         headless: true,
-        gl: "swiftshader",
         args: [
           "--no-sandbox",
           "--disable-setuid-sandbox",
           "--disable-dev-shm-usage",
           "--disable-gpu",
-          "--disable-gpu-sandbox",
-          "--disable-gpu-compositing",
-          "--disable-software-rasterizer",
-          "--single-process",
-          "--no-zygote",
-          "--disable-extensions",
-          "--disable-background-networking",
           "--no-first-run",
-          "--mute-audio",
-          "--use-gl=swiftshader",
-          "--disable-gl-drawing-for-tests",
-          "--disable-features=VizDisplayCompositor",
+          "--no-zygote",
+          "--single-process",
         ],
       },
     }),
@@ -169,34 +163,24 @@ const renderJob = async (jobId, inputProps) => {
     inputProps: normalized,
     codec: "h264",
     outputLocation,
+    browserExecutable: CHROME_PATH,
     onProgress: () => {},
     chromiumOptions: {
       disableWebSecurity: true,
-      enableMultiProcessOnLinux: false,
-      gl: "swiftshader",
       headless: true,
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
         "--disable-dev-shm-usage",
         "--disable-gpu",
-        "--disable-gpu-sandbox",
-        "--disable-gpu-compositing",
-        "--disable-software-rasterizer",
-        "--single-process",
-        "--no-zygote",
-        "--disable-extensions",
-        "--disable-background-networking",
         "--no-first-run",
-        "--mute-audio",
-        "--use-gl=swiftshader",
-        "--disable-gl-drawing-for-tests",
-        "--disable-features=VizDisplayCompositor",
+        "--no-zygote",
+        "--single-process",
       ],
     },
     envVariables: {},
     logLevel: "info",
-    timeoutInMilliseconds: 180000, // 3 min max for actual render
+    timeoutInMilliseconds: 300000, // 5 min max for actual render
   });
 
   return outputLocation;

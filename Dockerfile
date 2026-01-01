@@ -1,32 +1,14 @@
-FROM node:24-slim
+FROM ghcr.io/puppeteer/puppeteer:latest
 
-# Install system deps for headless Chromium and ffmpeg
-RUN apt-get update && apt-get install -y \
-    ffmpeg \
-    fonts-noto-color-emoji \
-    fonts-liberation \
-    libnss3 \
-    libatk1.0-0 \
-    libatk-bridge2.0-0 \
-    libcups2 \
-    libdrm2 \
-    libxkbcommon0 \
-    libxcomposite1 \
-    libxdamage1 \
-    libxrandr2 \
-    libgbm1 \
-    libasound2 \
-    libpango-1.0-0 \
-    libcairo2 \
-    libx11-xcb1 \
-    libxcb1 \
-    libxshmfence1 \
-    ca-certificates \
-    curl \
-  && rm -rf /var/lib/apt/lists/*
+USER root
+
+# Install ffmpeg
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production \
-    PORT=8080
+    PORT=8080 \
+    PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
 
 WORKDIR /usr/src/app
 
@@ -35,11 +17,8 @@ RUN npm ci --include=dev
 
 COPY . .
 
-# Pre-bundle Remotion at build time (saves 60-90s on cold starts)
+# Pre-bundle Remotion at build time
 RUN npx remotion bundle src/index.ts --out-dir=bundle --public-dir=public
-
-# Download Remotion's chrome-headless-shell at build time
-RUN npx remotion browser ensure
 
 EXPOSE 8080
 CMD ["npm", "start"]
