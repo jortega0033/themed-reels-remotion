@@ -139,11 +139,17 @@ const renderJob = async (jobId, inputProps) => {
           "--disable-gpu",
           "--single-process",
           "--no-zygote",
+          "--disable-software-rasterizer",
+          "--disable-extensions",
+          "--disable-background-networking",
+          "--disable-dbus",
+          "--no-first-run",
+          "--mute-audio",
         ],
       },
     }),
-    30000,
-    "getCompositions timed out after 30s"
+    60000,
+    "getCompositions timed out after 60s"
   );
   
   const composition = comps.find((c) => c.id === COMPOSITION_ID);
@@ -160,8 +166,8 @@ const renderJob = async (jobId, inputProps) => {
     onProgress: () => {},
     chromiumOptions: {
       disableWebSecurity: true,
-      enableMultiProcessOnLinux: true,
-      gl: "angle",
+      enableMultiProcessOnLinux: false,
+      gl: "swiftshader",
       headless: true,
       args: [
         "--no-sandbox",
@@ -170,6 +176,12 @@ const renderJob = async (jobId, inputProps) => {
         "--disable-gpu",
         "--single-process",
         "--no-zygote",
+        "--disable-software-rasterizer",
+        "--disable-extensions",
+        "--disable-background-networking",
+        "--disable-dbus",
+        "--no-first-run",
+        "--mute-audio",
       ],
     },
     envVariables: {},
