@@ -326,6 +326,21 @@ const respondWithJob = (req, res, jobId, { forceDownload = false } = {}) => {
   });
 };
 
+// Root endpoint for service info
+app.get("/", (_req, res) => {
+  res.json({ 
+    service: "ReelSmith",
+    version: "1.0.0",
+    endpoints: {
+      health: "GET /health",
+      render_sync: "POST /render",
+      render_async: "POST /render/async",
+      status: "GET /render/status/:jobId",
+      result: "GET /render/result/:jobId"
+    }
+  });
+});
+
 app.get("/health", (_req, res) => {
   res.json({ ok: true });
 });
