@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 8080;
 const ENTRY_POINT = path.join(process.cwd(), "src", "index.ts");
 const COMPOSITION_ID = "MasterComposition";
 const TMP_DIR = process.env.TMP_DIR || "/tmp";
+const CHROMIUM_PATH = "/usr/bin/chromium";
 const GCS_BUCKET = process.env.GCS_BUCKET;
 const GCS_PREFIX = process.env.GCS_PREFIX || "renders";
 const GCS_SIGNED_URL_TTL_SECONDS = Number(
@@ -130,6 +131,7 @@ const renderJob = async (jobId, inputProps) => {
   const comps = await withTimeout(
     getCompositions(serveUrl, {
       inputProps: normalized,
+      browserExecutable: CHROMIUM_PATH,
       timeoutInMilliseconds: 120000,
       chromiumOptions: {
         headless: true,
@@ -159,6 +161,7 @@ const renderJob = async (jobId, inputProps) => {
     inputProps: normalized,
     codec: "h264",
     outputLocation,
+    browserExecutable: CHROMIUM_PATH,
     onProgress: () => {},
     chromiumOptions: {
       disableWebSecurity: true,
