@@ -136,6 +136,7 @@ const renderJob = async (jobId, inputProps) => {
   const normalized = normalizeSpecInput(inputProps);
   if (!normalized) throw new Error("Invalid render spec");
 
+  console.log(`[${jobId}] Getting compositions...`);
   const serveUrl = getServeUrl();
   
   const comps = await withTimeout(
@@ -183,11 +184,14 @@ const renderJob = async (jobId, inputProps) => {
     180000,
     "getCompositions timed out after 180s"
   );
+  console.log(`[${jobId}] Found ${comps.length} compositions`);
   
   const composition = comps.find((c) => c.id === COMPOSITION_ID);
   if (!composition) throw new Error(`Composition ${COMPOSITION_ID} not found`);
+  console.log(`[${jobId}] Using composition: ${COMPOSITION_ID}, duration: ${composition.durationInFrames} frames at ${composition.fps}fps`);
 
   const outputLocation = path.join(TMP_DIR, `render-${jobId}.mp4`);
+  console.log(`[${jobId}] Starting renderMedia to ${outputLocation}...`);
 
   await renderMedia({
     serveUrl,
@@ -195,7 +199,11 @@ const renderJob = async (jobId, inputProps) => {
     inputProps: normalized,
     codec: "h264",
     outputLocation,
-    onProgress: () => {},
+    onProgress: ({ renderedFrames, encodedFrames, progress }) => {
+      if (renderedFrames % 30 === 0) {
+        console.log(`[${jobId}] Progress: ${Math.round(progress * 100)}% (rendered: ${renderedFrames}, encoded: ${encodedFrames})`);
+      }
+    },
     browserExecutable: CHROME_EXECUTABLE,
     chromiumOptions: {
       disableWebSecurity: true,
@@ -239,6 +247,7 @@ const renderJob = async (jobId, inputProps) => {
     timeoutInMilliseconds: 480000, // 8 min max for actual render
   });
 
+  console.log(`[${jobId}] Render complete, file size: ${fs.statSync(outputLocation).size} bytes`);
   return outputLocation;
 };
 
@@ -274,13 +283,17 @@ const jobs = new Map();
 const startJob = async (jobId, inputProps) => {
   const createdAt = Date.now();
   jobs.set(jobId, { status: "processing", createdAt });
+  console.log(`[${jobId}] Job started at ${new Date(createdAt).toISOString()}`);
+  
   try {
-    // Wrap entire job in 5-minute timeout
+    // Wrap entire job with configured timeout
+    console.log(`[${jobId}] Starting render with ${JOB_TIMEOUT_MS}ms timeout`);
     const output = await withTimeout(
       renderJob(jobId, inputProps),
       JOB_TIMEOUT_MS,
-      "Job timed out after 5 minutes"
+      `Job timed out after ${JOB_TIMEOUT_MS / 1000} seconds`
     );
+    console.log(`[${jobId}] Render completed: ${output}`);
     let cloudUrl;
     let signedUrl;
 
