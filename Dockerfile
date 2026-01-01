@@ -19,13 +19,17 @@ RUN apt-get update && apt-get install -y \
     libpango-1.0-0 \
     libcairo2 \
     dbus \
+    dbus-x11 \
     ca-certificates \
     curl \
-  && rm -rf /var/lib/apt/lists/*
+    xvfb \
+  && rm -rf /var/lib/apt/lists/* \
+  && mkdir -p /run/dbus
 
 ENV NODE_ENV=production \
     PORT=8080 \
-    DBUS_SESSION_BUS_ADDRESS=/dev/null
+    DBUS_SESSION_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket \
+    DISPLAY=:99
 
 WORKDIR /usr/src/app
 
@@ -41,4 +45,6 @@ RUN npx remotion bundle src/index.ts --out-dir=bundle --public-dir=public
 RUN npx remotion browser ensure
 
 EXPOSE 8080
-CMD ["npm", "start"]
+
+# Start dbus and then the app
+CMD dbus-daemon --system --fork 2>/dev/null || true && npm start
