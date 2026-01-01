@@ -6,9 +6,7 @@ USER root
 RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production \
-    PORT=8080 \
-    PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
-    PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+    PORT=8080
 
 WORKDIR /usr/src/app
 
@@ -19,6 +17,9 @@ COPY . .
 
 # Pre-bundle Remotion at build time
 RUN npx remotion bundle src/index.ts --out-dir=bundle --public-dir=public
+
+# Download Remotion's browser at build time
+RUN npx remotion browser ensure
 
 EXPOSE 8080
 CMD ["npm", "start"]
