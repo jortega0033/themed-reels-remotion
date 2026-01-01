@@ -25,5 +25,8 @@ COPY . .
 # Pre-bundle Remotion at build time
 RUN npx remotion bundle src/index.ts --out-dir=bundle --public-dir=public
 
+# Download Remotion's chrome-headless-shell at build time
+RUN npx remotion browser ensure
+
 EXPOSE 8080
 CMD ["npm", "start"]
