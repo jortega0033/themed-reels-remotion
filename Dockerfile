@@ -1,8 +1,22 @@
 FROM node:18-slim
 
-# Install chromium and ffmpeg (same approach as your working vote-bot)
+# Install Linux dependencies for Chrome Headless Shell (not chromium package)
+# Per Remotion docs: https://www.remotion.dev/docs/miscellaneous/linux-dependencies
 RUN apt-get update && apt-get install -y \
-    chromium \
+    libnss3 \
+    libdbus-1-3 \
+    libatk1.0-0 \
+    libgbm-dev \
+    libasound2 \
+    libxrandr2 \
+    libxkbcommon-dev \
+    libxfixes3 \
+    libxcomposite1 \
+    libxdamage1 \
+    libpango-1.0-0 \
+    libcairo2 \
+    libcups2 \
+    libatk-bridge2.0-0 \
     ffmpeg \
     fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst \
     fonts-noto-color-emoji \
