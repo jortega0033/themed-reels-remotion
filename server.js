@@ -134,7 +134,6 @@ const renderJob = async (jobId, inputProps) => {
       browserExecutable: CHROMIUM_PATH,
       timeoutInMilliseconds: 120000,
       chromiumOptions: {
-        headless: true,
         args: [
           "--no-sandbox",
           "--disable-setuid-sandbox",
@@ -166,7 +165,6 @@ const renderJob = async (jobId, inputProps) => {
     onProgress: () => {},
     chromiumOptions: {
       disableWebSecurity: true,
-      headless: true,
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
