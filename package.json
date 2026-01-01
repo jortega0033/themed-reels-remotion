@@ -6,7 +6,7 @@
     "start": "node server.js",
     "studio": "remotion studio",
     "build": "remotion render MasterComposition out/video.mp4 --props-file=./test-render.json",
-    "render": "remotion render MasterComposition out/video.mp4 --props-file=./test-render.json",
+    "render": "npx remotion render src/index.ts MasterComposition out/video.mp4 --props \"$(cat test-render.json)\" --overwrite",
     "upgrade": "remotion upgrade"
   },
   "dependencies": {
