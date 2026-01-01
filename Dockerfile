@@ -24,9 +24,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Set environment variables
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
-    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium \
-    NODE_ENV=production \
+# Don't set PUPPETEER_EXECUTABLE_PATH - let Remotion find chrome-headless-shell
+ENV NODE_ENV=production \
     PORT=8080
 
 WORKDIR /usr/src/app
