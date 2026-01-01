@@ -1,5 +1,7 @@
 # Dark Psych Reel - Remotion
 
+[![Cloud Build](https://storage.googleapis.com/n8n-server-482722_cloudbuild/badges/6db232a0-4908-4436-9a28-345b6accee0c.svg)](https://console.cloud.google.com/cloud-build/builds?project=n8n-server-482722)
+
 Programmatic video generation for 9:16 vertical reels with ElevenLabs karaoke captions.
 
 ## Features
