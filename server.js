@@ -22,8 +22,8 @@ const AUTH_TOKEN = process.env.RENDER_AUTH_TOKEN || process.env.AUTH_TOKEN;
 
 const storage = GCS_BUCKET ? new Storage() : null;
 
-// Job timeout: 5 minutes max for the entire render pipeline
-const JOB_TIMEOUT_MS = 5 * 60 * 1000;
+// Job timeout: 10 minutes max (Cloud Run maximum)
+const JOB_TIMEOUT_MS = 10 * 60 * 1000;
 
 // Utility: wrap a promise with a timeout
 const withTimeout = (promise, ms, message = "Operation timed out") =>
@@ -130,7 +130,7 @@ const renderJob = async (jobId, inputProps) => {
   const comps = await withTimeout(
     getCompositions(serveUrl, {
       inputProps: normalized,
-      timeoutInMilliseconds: 120000,
+      timeoutInMilliseconds: 180000,
       chromiumOptions: {
         args: [
           "--no-sandbox",
@@ -140,6 +140,9 @@ const renderJob = async (jobId, inputProps) => {
           "--no-first-run",
           "--no-zygote",
           "--single-process",
+          "--disable-dbus",
+          "--disable-features=NetworkService",
+          "--disable-ipc-flooding-protection",
         ],
       },
     }),
@@ -169,11 +172,14 @@ const renderJob = async (jobId, inputProps) => {
         "--no-first-run",
         "--no-zygote",
         "--single-process",
+        "--disable-dbus",
+        "--disable-features=NetworkService",
+        "--disable-ipc-flooding-protection",
       ],
     },
     envVariables: {},
     logLevel: "info",
-    timeoutInMilliseconds: 300000, // 5 min max for actual render
+    timeoutInMilliseconds: 480000, // 8 min max for actual render
   });
 
   return outputLocation;
