@@ -116,9 +116,10 @@
             "fontFamily": "sans-serif",
             "fontSize": 72,
             "color": "#ffffff",
-            "textAlign": "center"
+            "textAlign": "center",
+            "textShadow": "0 2px 8px rgba(0,0,0,0.6)"
           },
-          "opacity": 0.9,
+          "opacity": 1,
           "highlightColor": "#b81500",
           "timings": [
             {
@@ -415,11 +416,12 @@
             "color": "#9c1200",
             "fontSize": 84,
             "fontFamily": "sans-serif",
-            "textAlign": "center"
+            "textAlign": "center",
+            "textShadow": "0 2px 8px rgba(0,0,0,0.6)"
           },
           "layout": { "verticalAlign": "top", "padding": "72px 48px 32px" },
           "chunking": { "maxWords": 6, "pauseMs": 320, "enabled": true },
-          "opacity": 0.9
+          "opacity": 1
         }
       }
     ]

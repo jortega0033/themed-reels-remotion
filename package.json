@@ -7,7 +7,9 @@
     "studio": "remotion studio",
     "build": "remotion render MasterComposition out/video.mp4 --props-file=./test-render.json",
     "render": "npx remotion render src/index.ts MasterComposition out/video.mp4 --props \"$(cat test-render.json)\" --overwrite",
-    "upgrade": "remotion upgrade"
+    "upgrade": "remotion upgrade",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@google-cloud/storage": "^7.13.0",
@@ -22,8 +24,12 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/node": "^22.9.4",
+    "@types/supertest": "^2.0.16",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^1.6.0",
+    "supertest": "^6.3.3"
   }
 }

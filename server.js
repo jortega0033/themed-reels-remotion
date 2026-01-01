@@ -258,6 +258,10 @@ app.get('/render/async/:jobId', requireAuth, (req, res) => respondWithJob(req, r
 app.get('/render/status/:jobId', requireAuth, (req, res) => respondWithJob(req, res, req.params.jobId));
 app.get('/render/result/:jobId', requireAuth, (req, res) => respondWithJob(req, res, req.params.jobId, { forceDownload: true }));
 
-app.listen(PORT, () => {
-  console.log(`Render API listening on port ${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Render server listening on port ${PORT}`);
+  });
+}
+
+module.exports = app;
