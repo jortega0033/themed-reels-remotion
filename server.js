@@ -130,6 +130,7 @@ const renderJob = async (jobId, inputProps) => {
   const comps = await withTimeout(
     getCompositions(serveUrl, {
       inputProps: normalized,
+      timeoutInMilliseconds: 60000,
       chromiumOptions: {
         headless: true,
         args: [
@@ -148,8 +149,8 @@ const renderJob = async (jobId, inputProps) => {
         ],
       },
     }),
-    60000,
-    "getCompositions timed out after 60s"
+    120000,
+    "getCompositions timed out after 120s"
   );
   
   const composition = comps.find((c) => c.id === COMPOSITION_ID);
