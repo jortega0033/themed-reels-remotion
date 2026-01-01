@@ -144,8 +144,23 @@ const renderJob = async (jobId, inputProps) => {
     "Bundle timed out after 60s"
   );
   
+  console.log(`Using Chrome at: ${CHROME_EXECUTABLE}`);
+  
   const comps = await withTimeout(
-    getCompositions(serveUrl, { inputProps: normalized }),
+    getCompositions(serveUrl, {
+      inputProps: normalized,
+      browserExecutable: CHROME_EXECUTABLE,
+      chromiumOptions: {
+        args: [
+          "--no-sandbox",
+          "--disable-setuid-sandbox",
+          "--disable-dev-shm-usage",
+          "--disable-gpu",
+          "--single-process",
+          "--no-zygote",
+        ],
+      },
+    }),
     30000,
     "getCompositions timed out after 30s"
   );
