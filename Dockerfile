@@ -1,4 +1,4 @@
-FROM node:20-slim
+FROM node:18-slim
 
 # Install chromium and ffmpeg (same approach as your working vote-bot)
 RUN apt-get update && apt-get install -y \
