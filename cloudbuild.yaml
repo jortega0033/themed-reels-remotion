@@ -1,4 +1,14 @@
 steps:
+  # Cancel any previous in-progress builds for this trigger
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        gcloud builds list --ongoing --filter="substitutions.TRIGGER_NAME=$TRIGGER_NAME" --format="value(id)" | \
+        grep -v $BUILD_ID | \
+        xargs -r -I {} gcloud builds cancel {} --quiet || true
+
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
     args:
