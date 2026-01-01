@@ -1,23 +1,25 @@
-const path = require('path');
-const fs = require('fs');
-const { randomUUID } = require('crypto');
-const express = require('express');
-const { bundle } = require('@remotion/bundler');
-const { getCompositions, renderMedia } = require('@remotion/renderer');
-const { Storage } = require('@google-cloud/storage');
-const { z } = require('zod');
+const path = require("path");
+const fs = require("fs");
+const { randomUUID } = require("crypto");
+const express = require("express");
+const { bundle } = require("@remotion/bundler");
+const { getCompositions, renderMedia } = require("@remotion/renderer");
+const { Storage } = require("@google-cloud/storage");
+const { z } = require("zod");
 
 const app = express();
-app.use(express.json({ limit: '1mb' }));
+app.use(express.json({ limit: "1mb" }));
 
 const PORT = process.env.PORT || 8080;
-const ENTRY_POINT = path.join(process.cwd(), 'src', 'index.ts');
-const COMPOSITION_ID = 'MasterComposition';
-const TMP_DIR = process.env.TMP_DIR || '/tmp';
-const CHROME_EXECUTABLE = process.env.CHROME_EXECUTABLE || '/usr/bin/chromium';
+const ENTRY_POINT = path.join(process.cwd(), "src", "index.ts");
+const COMPOSITION_ID = "MasterComposition";
+const TMP_DIR = process.env.TMP_DIR || "/tmp";
+const CHROME_EXECUTABLE = process.env.CHROME_EXECUTABLE || "/usr/bin/chromium";
 const GCS_BUCKET = process.env.GCS_BUCKET;
-const GCS_PREFIX = process.env.GCS_PREFIX || 'renders';
-const GCS_SIGNED_URL_TTL_SECONDS = Number(process.env.GCS_SIGNED_URL_TTL_SECONDS || 3600);
+const GCS_PREFIX = process.env.GCS_PREFIX || "renders";
+const GCS_SIGNED_URL_TTL_SECONDS = Number(
+  process.env.GCS_SIGNED_URL_TTL_SECONDS || 3600
+);
 const AUTH_TOKEN = process.env.RENDER_AUTH_TOKEN || process.env.AUTH_TOKEN;
 
 const storage = GCS_BUCKET ? new Storage() : null;
@@ -25,19 +27,22 @@ const storage = GCS_BUCKET ? new Storage() : null;
 // Optional shared-secret auth. Skip if no token configured.
 const requireAuth = (req, res, next) => {
   if (!AUTH_TOKEN) return next();
-  const authHeader = req.get('authorization') || '';
-  const [, token] = authHeader.split(' ');
+  const authHeader = req.get("authorization") || "";
+  const [, token] = authHeader.split(" ");
   if (token === AUTH_TOKEN) return next();
-  return res.status(401).json({ error: 'Unauthorized' });
+  return res.status(401).json({ error: "Unauthorized" });
 };
 
 // Bundle once and reuse across requests
 let serveUrlPromise;
 const getServeUrl = () => {
   if (!serveUrlPromise) {
-    serveUrlPromise = bundle(ENTRY_POINT, {
-      publicDir: path.join(process.cwd(), 'public'),
-      cacheDir: path.join(TMP_DIR, 'remotion-cache'),
+    serveUrlPromise = bundle({
+      entryPoint: ENTRY_POINT,
+      publicDir: path.join(process.cwd(), "public"),
+      onProgress: (progress) => {
+        if (progress % 10 === 0) console.log(`Bundling: ${progress}%`);
+      },
     });
   }
   return serveUrlPromise;
@@ -51,7 +56,9 @@ const wordTimingSchema = z
     start: z.number().nonnegative(),
     end: z.number().positive(),
   })
-  .refine((value) => value.end > value.start, { message: 'word end must be after start' });
+  .refine((value) => value.end > value.start, {
+    message: "word end must be after start",
+  });
 
 const baseLayerSchema = z.object({
   id: z.string().min(1),
@@ -69,13 +76,17 @@ const renderSpecObjectSchema = z.object({
   }),
   assets: z.record(z.string(), z.string().min(1)),
   timeline: z.array(
-    z.discriminatedUnion('type', [
+    z.discriminatedUnion("type", [
       baseLayerSchema.extend({
-        type: z.literal('Video'),
-        props: z.object({ src: z.string().min(1), muted: z.boolean().optional(), style: styleSchema.optional() }),
+        type: z.literal("Video"),
+        props: z.object({
+          src: z.string().min(1),
+          muted: z.boolean().optional(),
+          style: styleSchema.optional(),
+        }),
       }),
       baseLayerSchema.extend({
-        type: z.literal('Audio'),
+        type: z.literal("Audio"),
         props: z.object({
           src: z.string().min(1),
           volume: z.number().min(0).max(1).optional(),
@@ -83,8 +94,12 @@ const renderSpecObjectSchema = z.object({
         }),
       }),
       baseLayerSchema.extend({
-        type: z.literal('KaraokeText'),
-        props: z.object({ text: z.string().min(1), style: styleSchema.optional(), timings: z.array(wordTimingSchema).nonempty() }),
+        type: z.literal("KaraokeText"),
+        props: z.object({
+          text: z.string().min(1),
+          style: styleSchema.optional(),
+          timings: z.array(wordTimingSchema).nonempty().optional(),
+        }),
       }),
     ])
   ),
@@ -101,7 +116,7 @@ const normalizeSpecInput = (inputProps) => {
   return Array.isArray(parsed.data) ? parsed.data[0] : parsed.data;
 };
 
-const validatePayload = body => {
+const validatePayload = (body) => {
   const parsed = renderSpecInputSchema.safeParse(body);
   if (parsed.success) return null;
   return parsed.error.toString();
@@ -109,11 +124,11 @@ const validatePayload = body => {
 
 const renderJob = async (jobId, inputProps) => {
   const normalized = normalizeSpecInput(inputProps);
-  if (!normalized) throw new Error('Invalid render spec');
+  if (!normalized) throw new Error("Invalid render spec");
 
   const serveUrl = await getServeUrl();
   const comps = await getCompositions(serveUrl, { inputProps: normalized });
-  const composition = comps.find(c => c.id === COMPOSITION_ID);
+  const composition = comps.find((c) => c.id === COMPOSITION_ID);
   if (!composition) throw new Error(`Composition ${COMPOSITION_ID} not found`);
 
   const outputLocation = path.join(TMP_DIR, `render-${jobId}.mp4`);
@@ -122,28 +137,31 @@ const renderJob = async (jobId, inputProps) => {
     serveUrl,
     composition,
     inputProps: normalized,
-    codec: 'h264',
+    codec: "h264",
     outputLocation,
+    onProgress: () => {},
     chromiumOptions: {
       disableWebSecurity: true,
       executablePath: CHROME_EXECUTABLE,
     },
     envVariables: {},
-    logLevel: 'info',
+    logLevel: "info",
   });
 
   return outputLocation;
 };
 
-const uploadToGcs = async localPath => {
+const uploadToGcs = async (localPath) => {
   if (!storage || !GCS_BUCKET) return {};
 
-  const prefix = GCS_PREFIX.replace(/\/+$/, '');
-  const destination = prefix ? path.posix.join(prefix, path.basename(localPath)) : path.basename(localPath);
+  const prefix = GCS_PREFIX.replace(/\/+$/, "");
+  const destination = prefix
+    ? path.posix.join(prefix, path.basename(localPath))
+    : path.basename(localPath);
 
   await storage.bucket(GCS_BUCKET).upload(localPath, {
     destination,
-    contentType: 'video/mp4',
+    contentType: "video/mp4",
     resumable: false,
   });
 
@@ -151,7 +169,10 @@ const uploadToGcs = async localPath => {
   const [signedUrl] = await storage
     .bucket(GCS_BUCKET)
     .file(destination)
-    .getSignedUrl({ action: 'read', expires: Date.now() + GCS_SIGNED_URL_TTL_SECONDS * 1000 });
+    .getSignedUrl({
+      action: "read",
+      expires: Date.now() + GCS_SIGNED_URL_TTL_SECONDS * 1000,
+    });
 
   return { cloudUrl, signedUrl };
 };
@@ -161,7 +182,7 @@ const jobs = new Map();
 
 const startJob = async (jobId, inputProps) => {
   const createdAt = Date.now();
-  jobs.set(jobId, { status: 'processing', createdAt });
+  jobs.set(jobId, { status: "processing", createdAt });
   try {
     const output = await renderJob(jobId, inputProps);
     let cloudUrl;
@@ -173,31 +194,37 @@ const startJob = async (jobId, inputProps) => {
       signedUrl = uploadResult.signedUrl;
       if (cloudUrl || signedUrl) fs.rm(output, { force: true }, () => {});
     } catch (uploadErr) {
-      console.error('GCS upload failed', uploadErr);
+      console.error("GCS upload failed", uploadErr);
     }
 
-    jobs.set(jobId, { status: 'completed', output: cloudUrl ? null : output, cloudUrl, signedUrl, createdAt });
+    jobs.set(jobId, {
+      status: "completed",
+      output: cloudUrl ? null : output,
+      cloudUrl,
+      signedUrl,
+      createdAt,
+    });
   } catch (err) {
-    jobs.set(jobId, { status: 'failed', error: String(err), createdAt });
+    jobs.set(jobId, { status: "failed", error: String(err), createdAt });
   }
 };
 
 const respondWithJob = (req, res, jobId, { forceDownload = false } = {}) => {
   const job = jobs.get(jobId);
-  if (!job) return res.status(404).json({ error: 'Job not found' });
+  if (!job) return res.status(404).json({ error: "Job not found" });
 
   const wantsDownload =
     forceDownload ||
-    ['1', 'true'].includes(String(req.query.download || '').toLowerCase()) ||
-    (req.get('accept') || '').includes('video');
+    ["1", "true"].includes(String(req.query.download || "").toLowerCase()) ||
+    (req.get("accept") || "").includes("video");
 
-  if (job.status === 'completed' && wantsDownload) {
+  if (job.status === "completed" && wantsDownload) {
     if (job.signedUrl) return res.redirect(job.signedUrl);
     if (job.output) {
-      return res.download(job.output, 'video.mp4', err => {
+      return res.download(job.output, "video.mp4", (err) => {
         fs.rm(job.output, { force: true }, () => {});
         jobs.delete(jobId);
-        if (err) console.error('Error sending file', err);
+        if (err) console.error("Error sending file", err);
       });
     }
   }
@@ -210,18 +237,18 @@ const respondWithJob = (req, res, jobId, { forceDownload = false } = {}) => {
     cloudUrl: job.cloudUrl,
     signedUrl: job.signedUrl,
     downloadUrl:
-      job.status === 'completed'
+      job.status === "completed"
         ? job.signedUrl || `/render/async/${jobId}?download=1`
         : undefined,
   });
 };
 
-app.get('/health', (_req, res) => {
+app.get("/health", (_req, res) => {
   res.json({ ok: true });
 });
 
 // Synchronous render: blocks until done, streams file back.
-app.post('/render', requireAuth, async (req, res) => {
+app.post("/render", requireAuth, async (req, res) => {
   const validationError = validatePayload(req.body);
   if (validationError) return res.status(400).json({ error: validationError });
 
@@ -229,34 +256,45 @@ app.post('/render', requireAuth, async (req, res) => {
 
   try {
     const outputLocation = await renderJob(jobId, req.body);
-    res.download(outputLocation, 'video.mp4', err => {
+    res.download(outputLocation, "video.mp4", (err) => {
       fs.rm(outputLocation, { force: true }, () => {});
-      if (err) console.error('Error sending file', err);
+      if (err) console.error("Error sending file", err);
     });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Render failed', details: String(err) });
+    res.status(500).json({ error: "Render failed", details: String(err) });
   }
 });
 
 // Async render: returns jobId immediately; poll status and fetch result.
-app.post('/render/async', requireAuth, async (req, res) => {
+app.post("/render/async", requireAuth, async (req, res) => {
   const validationError = validatePayload(req.body);
   if (validationError) return res.status(400).json({ error: validationError });
 
   const jobId = randomUUID();
-  jobs.set(jobId, { status: 'queued', createdAt: Date.now() });
+  jobs.set(jobId, { status: "queued", createdAt: Date.now() });
 
   startJob(jobId, req.body);
 
-  res.json({ jobId, status: 'queued', jobUrl: `/render/async/${jobId}`, downloadUrl: `/render/async/${jobId}?download=1` });
+  res.json({
+    jobId,
+    status: "queued",
+    jobUrl: `/render/async/${jobId}`,
+    downloadUrl: `/render/async/${jobId}?download=1`,
+  });
 });
 
-app.get('/render/async/:jobId', requireAuth, (req, res) => respondWithJob(req, res, req.params.jobId));
+app.get("/render/async/:jobId", requireAuth, (req, res) =>
+  respondWithJob(req, res, req.params.jobId)
+);
 
 // Backwards compatibility routes (delegating to combined handler)
-app.get('/render/status/:jobId', requireAuth, (req, res) => respondWithJob(req, res, req.params.jobId));
-app.get('/render/result/:jobId', requireAuth, (req, res) => respondWithJob(req, res, req.params.jobId, { forceDownload: true }));
+app.get("/render/status/:jobId", requireAuth, (req, res) =>
+  respondWithJob(req, res, req.params.jobId)
+);
+app.get("/render/result/:jobId", requireAuth, (req, res) =>
+  respondWithJob(req, res, req.params.jobId, { forceDownload: true })
+);
 
 if (require.main === module) {
   app.listen(PORT, () => {
