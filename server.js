@@ -24,6 +24,18 @@ const AUTH_TOKEN = process.env.RENDER_AUTH_TOKEN || process.env.AUTH_TOKEN;
 
 const storage = GCS_BUCKET ? new Storage() : null;
 
+// Job timeout: 5 minutes max for the entire render pipeline
+const JOB_TIMEOUT_MS = 5 * 60 * 1000;
+
+// Utility: wrap a promise with a timeout
+const withTimeout = (promise, ms, message = "Operation timed out") =>
+  Promise.race([
+    promise,
+    new Promise((_, reject) =>
+      setTimeout(() => reject(new Error(message)), ms)
+    ),
+  ]);
+
 // Optional shared-secret auth. Skip if no token configured.
 const requireAuth = (req, res, next) => {
   if (!AUTH_TOKEN) return next();
@@ -126,8 +138,18 @@ const renderJob = async (jobId, inputProps) => {
   const normalized = normalizeSpecInput(inputProps);
   if (!normalized) throw new Error("Invalid render spec");
 
-  const serveUrl = await getServeUrl();
-  const comps = await getCompositions(serveUrl, { inputProps: normalized });
+  const serveUrl = await withTimeout(
+    getServeUrl(),
+    60000,
+    "Bundle timed out after 60s"
+  );
+  
+  const comps = await withTimeout(
+    getCompositions(serveUrl, { inputProps: normalized }),
+    30000,
+    "getCompositions timed out after 30s"
+  );
+  
   const composition = comps.find((c) => c.id === COMPOSITION_ID);
   if (!composition) throw new Error(`Composition ${COMPOSITION_ID} not found`);
 
@@ -156,7 +178,7 @@ const renderJob = async (jobId, inputProps) => {
     browserExecutable: CHROME_EXECUTABLE,
     envVariables: {},
     logLevel: "info",
-    timeoutInMilliseconds: 120000,
+    timeoutInMilliseconds: 180000, // 3 min max for actual render
   });
 
   return outputLocation;
@@ -195,7 +217,12 @@ const startJob = async (jobId, inputProps) => {
   const createdAt = Date.now();
   jobs.set(jobId, { status: "processing", createdAt });
   try {
-    const output = await renderJob(jobId, inputProps);
+    // Wrap entire job in 5-minute timeout
+    const output = await withTimeout(
+      renderJob(jobId, inputProps),
+      JOB_TIMEOUT_MS,
+      "Job timed out after 5 minutes"
+    );
     let cloudUrl;
     let signedUrl;
 
