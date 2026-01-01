@@ -136,6 +136,20 @@ const renderJob = async (jobId, inputProps) => {
   const normalized = normalizeSpecInput(inputProps);
   if (!normalized) throw new Error("Invalid render spec");
 
+  // Verify browser binary exists
+  console.log(`[${jobId}] Checking browser binary at: ${CHROME_EXECUTABLE}`);
+  try {
+    const stats = fs.statSync(CHROME_EXECUTABLE);
+    console.log(`[${jobId}] Browser binary found, size: ${stats.size} bytes, executable: ${!!(stats.mode & 0o111)}`);
+    if (!(stats.mode & 0o111)) {
+      console.log(`[${jobId}] Browser binary is not executable! Attempting to chmod +x...`);
+      fs.chmodSync(CHROME_EXECUTABLE, 0o755);
+    }
+  } catch (err) {
+    console.error(`[${jobId}] Browser binary not found!`, err);
+    throw new Error(`Chrome binary not found at ${CHROME_EXECUTABLE}`);
+  }
+
   console.log(`[${jobId}] Getting compositions...`);
   const serveUrl = getServeUrl();
   
