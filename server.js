@@ -142,7 +142,7 @@ const renderJob = async (jobId, inputProps) => {
   const comps = await withTimeout(
     getCompositions(serveUrl, {
       inputProps: normalized,
-      timeoutInMilliseconds: 180000,
+      timeoutInMilliseconds: 300000, // 5 min for loading external assets
       browserExecutable: CHROME_EXECUTABLE,
       chromiumOptions: {
         args: [
