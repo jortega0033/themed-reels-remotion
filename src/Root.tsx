@@ -1,46 +1,51 @@
-import { Composition } from 'remotion';
-import { DarkPsychReel, DarkPsychReelProps } from './DarkPsychReel';
+import {Composition} from 'remotion';
+import {MasterComposition} from './components/MasterComposition';
+import {DEFAULT_SPEC} from './defaultSpec';
+import {RenderSpec, RenderSpecInput, renderSpecInputSchema} from './types/schema';
+import {coerceRenderSpecInput} from './utils/coerceRenderSpecInput';
+
+const resolveDuration = (spec: RenderSpec): number => {
+  const layersDuration = spec.timeline.reduce((max, layer) => {
+    return Math.max(max, layer.startFrame + layer.durationInFrames);
+  }, 0);
+
+  return Math.max(spec.config.durationInFrames, layersDuration);
+};
+
+const normalizeSpec = (value: RenderSpecInput | undefined): RenderSpec => {
+  console.log('normalizeSpec raw value', value);
+  const candidate = coerceRenderSpecInput(value);
+  const parsed = renderSpecInputSchema.safeParse(candidate);
+  if (!parsed.success) {
+    throw new Error(`Render spec validation failed: ${parsed.error.toString()}`);
+  }
+
+  const spec = Array.isArray(parsed.data) ? parsed.data[0] : parsed.data;
+  console.log('normalizeSpec: config', spec.config, 'timeline length', spec.timeline.length);
+  return spec;
+};
 
 export const RemotionRoot: React.FC = () => {
   return (
-    <>
-      <Composition<DarkPsychReelProps>
-        id="DarkPsychReel"
-        component={DarkPsychReel}
-        durationInFrames={900}
-        fps={30}
-        width={1080}
-        height={1920}
-        defaultProps={{
-          videoUrls: [
-            'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-            'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
-            'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-          ],
-          audioUrl:
-            'https://commondatastorage.googleapis.com/codeskulptor-assets/Epoq-Lepidoptera.ogg',
-          elevenLabsAlignment: {
-            characters: ['T', 'e', 's', 't', ' ', 'a', 'u', 'd', 'i', 'o', ' ', 'h', 'e', 'r', 'e'],
-            character_start_times_seconds: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4],
-            character_end_times_seconds: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5],
-          },
-        }}
-        calculateMetadata={({ props }) => {
-          const fps = 30;
-          // Get audio duration from alignment data (last character end time)
-          const audioDurationSeconds =
-            props.elevenLabsAlignment.character_end_times_seconds[
-              props.elevenLabsAlignment.character_end_times_seconds.length - 1
-            ];
-          // Add 0.75s buffer for fade out effect
-          const durationInFrames = Math.ceil((audioDurationSeconds + 0.75) * fps);
+    <Composition<RenderSpecInput>
+      id="MasterComposition"
+      component={MasterComposition}
+      durationInFrames={DEFAULT_SPEC.config.durationInFrames}
+      fps={DEFAULT_SPEC.config.fps}
+      width={DEFAULT_SPEC.config.width}
+      height={DEFAULT_SPEC.config.height}
+      calculateMetadata={({props}) => {
+        const spec = normalizeSpec(props as RenderSpecInput);
+        const durationInFrames = resolveDuration(spec);
 
-          return {
-            durationInFrames,
-            props,
-          };
-        }}
-      />
-    </>
+        return {
+          width: spec.config.width,
+          height: spec.config.height,
+          fps: spec.config.fps,
+          durationInFrames,
+          props: spec,
+        };
+      }}
+    />
   );
 };

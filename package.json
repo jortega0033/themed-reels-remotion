@@ -1,20 +1,25 @@
 {
-  "name": "dark-psych-reel-remotion",
+  "name": "themed-reel-remotion",
   "version": "1.0.0",
   "description": "Remotion project for vertical video reels with ElevenLabs karaoke captions",
   "scripts": {
-    "start": "remotion studio",
-    "build": "remotion render DarkPsychReel out/video.mp4",
-    "render": "remotion render DarkPsychReel out/video.mp4 --props=./test-render.json",
+    "start": "node server.js",
+    "studio": "remotion studio",
+    "build": "remotion render MasterComposition out/video.mp4 --props-file=./test-render.json",
+    "render": "remotion render MasterComposition out/video.mp4 --props-file=./test-render.json",
     "upgrade": "remotion upgrade"
   },
   "dependencies": {
+    "@google-cloud/storage": "^7.13.0",
     "@remotion/bundler": "^4.0.240",
+    "@remotion/renderer": "^4.0.240",
+    "express": "^4.19.2",
     "@remotion/cli": "^4.0.240",
     "@remotion/media-utils": "^4.0.240",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remotion": "^4.0.240"
+    "remotion": "^4.0.240",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.45",

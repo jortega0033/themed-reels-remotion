@@ -5,3 +5,5 @@ dist
 *.mp4
 *.webm
 *.mov
+google-cloud-sdk/
+*.md

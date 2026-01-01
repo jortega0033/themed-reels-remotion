@@ -11,7 +11,7 @@ import {
 import { KaraokeCaptions } from './components/KaraokeCaptions';
 import { processAlignment, ElevenLabsAlignment } from './utils/processAlignment';
 
-export interface DarkPsychReelProps {
+export interface ThemedReelProps {
   videoUrls: string[];
   audioUrl: string;
   elevenLabsAlignment: ElevenLabsAlignment;
@@ -19,7 +19,7 @@ export interface DarkPsychReelProps {
   type?: 'dark' | 'romantic' | 'entertainment' | 'narration' | 'corporate' | 'horror' | 'scifi';
 }
 
-export const DarkPsychReel: React.FC<DarkPsychReelProps> = ({
+export const ThemedReel: React.FC<ThemedReelProps> = ({
   videoUrls,
   audioUrl,
   elevenLabsAlignment,
