@@ -130,27 +130,32 @@ const renderJob = async (jobId, inputProps) => {
   const comps = await withTimeout(
     getCompositions(serveUrl, {
       inputProps: normalized,
-      timeoutInMilliseconds: 60000,
+      timeoutInMilliseconds: 120000,
       chromiumOptions: {
         headless: true,
+        gl: "swiftshader",
         args: [
           "--no-sandbox",
           "--disable-setuid-sandbox",
           "--disable-dev-shm-usage",
           "--disable-gpu",
+          "--disable-gpu-sandbox",
+          "--disable-gpu-compositing",
+          "--disable-software-rasterizer",
           "--single-process",
           "--no-zygote",
-          "--disable-software-rasterizer",
           "--disable-extensions",
           "--disable-background-networking",
-          "--disable-dbus",
           "--no-first-run",
           "--mute-audio",
+          "--use-gl=swiftshader",
+          "--disable-gl-drawing-for-tests",
+          "--disable-features=VizDisplayCompositor",
         ],
       },
     }),
-    120000,
-    "getCompositions timed out after 120s"
+    180000,
+    "getCompositions timed out after 180s"
   );
   
   const composition = comps.find((c) => c.id === COMPOSITION_ID);
@@ -175,14 +180,18 @@ const renderJob = async (jobId, inputProps) => {
         "--disable-setuid-sandbox",
         "--disable-dev-shm-usage",
         "--disable-gpu",
+        "--disable-gpu-sandbox",
+        "--disable-gpu-compositing",
+        "--disable-software-rasterizer",
         "--single-process",
         "--no-zygote",
-        "--disable-software-rasterizer",
         "--disable-extensions",
         "--disable-background-networking",
-        "--disable-dbus",
         "--no-first-run",
         "--mute-audio",
+        "--use-gl=swiftshader",
+        "--disable-gl-drawing-for-tests",
+        "--disable-features=VizDisplayCompositor",
       ],
     },
     envVariables: {},

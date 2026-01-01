@@ -18,18 +18,15 @@ RUN apt-get update && apt-get install -y \
     libasound2 \
     libpango-1.0-0 \
     libcairo2 \
-    dbus \
-    dbus-x11 \
+    libx11-xcb1 \
+    libxcb1 \
+    libxshmfence1 \
     ca-certificates \
     curl \
-    xvfb \
-  && rm -rf /var/lib/apt/lists/* \
-  && mkdir -p /run/dbus
+  && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production \
-    PORT=8080 \
-    DBUS_SESSION_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket \
-    DISPLAY=:99
+    PORT=8080
 
 WORKDIR /usr/src/app
 
@@ -45,6 +42,4 @@ RUN npx remotion bundle src/index.ts --out-dir=bundle --public-dir=public
 RUN npx remotion browser ensure
 
 EXPOSE 8080
-
-# Start dbus and then the app
-CMD dbus-daemon --system --fork 2>/dev/null || true && npm start
+CMD ["npm", "start"]
