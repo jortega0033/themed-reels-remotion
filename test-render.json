@@ -118,6 +118,8 @@
             "color": "#ffffff",
             "textAlign": "center"
           },
+          "opacity": 0.9,
+          "highlightColor": "#b81500",
           "timings": [
             {
               "word": "If",
@@ -410,20 +412,14 @@
         "props": {
           "text": "Make anyone agree with you instantly.",
           "style": {
-            "fontFamily": "sans-serif",
+            "color": "#9c1200",
             "fontSize": 84,
-            "color": "#ffea00",
+            "fontFamily": "sans-serif",
             "textAlign": "center"
           },
-          "layout": { "verticalAlign": "top", "padding": "64px 48px 32px" },
+          "layout": { "verticalAlign": "top", "padding": "72px 48px 32px" },
           "chunking": { "maxWords": 6, "pauseMs": 320, "enabled": true },
-          "timings": [
-            {
-              "word": "Make anyone agree with you instantly.",
-              "start": 0,
-              "end": 25.6
-            }
-          ]
+          "opacity": 0.9
         }
       }
     ]

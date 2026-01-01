@@ -42,7 +42,8 @@ const karaokeLayerSchema = baseLayerSchema.extend({
   props: z.object({
     text: z.string().min(1),
     style: styleSchema.optional(),
-    timings: z.array(wordTimingSchema).nonempty(),
+    timings: z.array(wordTimingSchema).nonempty().optional(),
+    opacity: z.number().min(0).max(1).optional(),
     layout: z
       .object({
         verticalAlign: z.enum(['top', 'center', 'bottom']).optional(),

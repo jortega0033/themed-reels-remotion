@@ -100,21 +100,31 @@ export const KaraokeText: React.FC<Props> = ({ layer, fps }) => {
   const frame = useCurrentFrame();
   const style = (layer.props.style as CSSProperties | undefined) ?? {};
   const baseColor = (style.color as string | undefined) ?? "#ffffff";
-  const activeColor = layer.props.highlightColor ?? "#ffed8b";
+  const activeColor = layer.props.highlightColor ?? baseColor;
   const isHook = layer.id.toLowerCase().includes("hook");
   const verticalAlign =
     layer.props.layout?.verticalAlign ?? (isHook ? "top" : "center");
   const padding =
     layer.props.layout?.padding ?? (isHook ? "64px 48px 32px" : "48px");
+  const opacityScale = Math.max(0, Math.min(1, layer.props.opacity ?? 1));
 
   const timedWords = useMemo(() => {
     if (!layer.props.timings?.length) {
-      console.warn(`Karaoke layer "${layer.id}" received no timings`);
-      return [] as TimedWord[];
+      const fallbackEnd = layer.durationInFrames / fps;
+      return toFrames(
+        [
+          {
+            word: layer.props.text,
+            start: 0,
+            end: fallbackEnd,
+          },
+        ],
+        fps
+      );
     }
 
     return toFrames(layer.props.timings, fps);
-  }, [fps, layer.id, layer.props.timings]);
+  }, [fps, layer.durationInFrames, layer.props.text, layer.props.timings]);
 
   const chunks = useMemo(
     () =>
@@ -205,7 +215,7 @@ export const KaraokeText: React.FC<Props> = ({ layer, fps }) => {
                   textTransform: style.textTransform ?? "none",
                   color: isActiveWord ? activeColor : baseColor,
                   textShadow: style.textShadow,
-                  opacity: chunkOpacity * wordOpacity,
+                  opacity: opacityScale * chunkOpacity * wordOpacity,
                   transition: "color 0.2s ease",
                 }}
               >
