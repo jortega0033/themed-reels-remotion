@@ -39,7 +39,10 @@ COPY . .
 RUN npx remotion bundle src/index.ts --out-dir=bundle --public-dir=public
 
 # Download Remotion's chrome-headless-shell at build time
-RUN npx remotion browser ensure
+RUN npx remotion browser ensure && \
+    echo "Browser download complete. Checking installation:" && \
+    ls -la node_modules/.remotion/ || echo "No .remotion directory found" && \
+    find node_modules/.remotion -name "chrome-headless-shell*" || echo "Chrome binary not found"
 
 EXPOSE 8080
 CMD ["npm", "start"]
