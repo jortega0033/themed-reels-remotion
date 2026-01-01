@@ -5,12 +5,28 @@ RUN apt-get update && apt-get install -y \
     chromium \
     ffmpeg \
     fonts-noto-color-emoji \
+    fonts-liberation \
+    libnss3 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libdrm2 \
+    libxkbcommon0 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxrandr2 \
+    libgbm1 \
+    libasound2 \
+    libpango-1.0-0 \
+    libcairo2 \
+    dbus \
   && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production \
     REMOTION_ENABLE_CHROMIUM_DOWNLOAD=false \
     CHROME_EXECUTABLE=/usr/bin/chromium \
-    PORT=8080
+    PORT=8080 \
+    DBUS_SESSION_BUS_ADDRESS=/dev/null
 
 WORKDIR /usr/src/app
 

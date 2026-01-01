@@ -142,10 +142,21 @@ const renderJob = async (jobId, inputProps) => {
     onProgress: () => {},
     chromiumOptions: {
       disableWebSecurity: true,
-      executablePath: CHROME_EXECUTABLE,
+      enableMultiProcessOnLinux: true,
+      gl: "angle",
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-gpu",
+        "--single-process",
+        "--no-zygote",
+      ],
     },
+    browserExecutable: CHROME_EXECUTABLE,
     envVariables: {},
     logLevel: "info",
+    timeoutInMilliseconds: 120000,
   });
 
   return outputLocation;
