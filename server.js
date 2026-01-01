@@ -13,7 +13,6 @@ const PORT = process.env.PORT || 8080;
 const ENTRY_POINT = path.join(process.cwd(), "src", "index.ts");
 const COMPOSITION_ID = "MasterComposition";
 const TMP_DIR = process.env.TMP_DIR || "/tmp";
-const CHROME_EXECUTABLE = process.env.CHROME_EXECUTABLE || "/usr/bin/chromium";
 const GCS_BUCKET = process.env.GCS_BUCKET;
 const GCS_PREFIX = process.env.GCS_PREFIX || "renders";
 const GCS_SIGNED_URL_TTL_SECONDS = Number(
@@ -128,12 +127,9 @@ const renderJob = async (jobId, inputProps) => {
 
   const serveUrl = getServeUrl();
   
-  console.log(`Using Chrome at: ${CHROME_EXECUTABLE}`);
-  
   const comps = await withTimeout(
     getCompositions(serveUrl, {
       inputProps: normalized,
-      browserExecutable: CHROME_EXECUTABLE,
       chromiumOptions: {
         headless: true,
         args: [
@@ -143,7 +139,6 @@ const renderJob = async (jobId, inputProps) => {
           "--disable-gpu",
           "--single-process",
           "--no-zygote",
-          "--headless=new",
         ],
       },
     }),
@@ -175,10 +170,8 @@ const renderJob = async (jobId, inputProps) => {
         "--disable-gpu",
         "--single-process",
         "--no-zygote",
-        "--headless=new",
       ],
     },
-    browserExecutable: CHROME_EXECUTABLE,
     envVariables: {},
     logLevel: "info",
     timeoutInMilliseconds: 180000, // 3 min max for actual render

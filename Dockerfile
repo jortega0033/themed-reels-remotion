@@ -2,7 +2,6 @@ FROM node:24-slim
 
 # Install system deps for headless Chromium and ffmpeg
 RUN apt-get update && apt-get install -y \
-    chromium \
     ffmpeg \
     fonts-noto-color-emoji \
     fonts-liberation \
@@ -20,11 +19,11 @@ RUN apt-get update && apt-get install -y \
     libpango-1.0-0 \
     libcairo2 \
     dbus \
+    ca-certificates \
+    curl \
   && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production \
-    REMOTION_ENABLE_CHROMIUM_DOWNLOAD=false \
-    CHROME_EXECUTABLE=/usr/bin/chromium \
     PORT=8080 \
     DBUS_SESSION_BUS_ADDRESS=/dev/null
 
@@ -37,6 +36,9 @@ COPY . .
 
 # Pre-bundle Remotion at build time (saves 60-90s on cold starts)
 RUN npx remotion bundle src/index.ts --out-dir=bundle --public-dir=public
+
+# Download Remotion's chrome-headless-shell at build time
+RUN npx remotion browser ensure
 
 EXPOSE 8080
 CMD ["npm", "start"]
