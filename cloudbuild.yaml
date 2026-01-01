@@ -49,6 +49,8 @@ steps:
       - '8'
       - '--concurrency'
       - '1'
+      - '--max-instances'
+      - '2'
       - '--timeout'
       - '600'
       - '--allow-unauthenticated'
