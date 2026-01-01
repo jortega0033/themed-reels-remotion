@@ -47,6 +47,17 @@ const requireAuth = (req, res, next) => {
 const BUNDLE_DIR = path.join(process.cwd(), "bundle");
 const getServeUrl = () => BUNDLE_DIR;
 
+// Path to Chrome Headless Shell downloaded by 'npx remotion browser ensure'
+const CHROME_EXECUTABLE = path.join(
+  process.cwd(),
+  "node_modules",
+  ".remotion",
+  "chrome-headless-shell",
+  "linux64",
+  "chrome-headless-shell-linux64",
+  "chrome-headless-shell"
+);
+
 const styleSchema = z.record(z.string(), z.unknown());
 
 const wordTimingSchema = z
@@ -131,6 +142,7 @@ const renderJob = async (jobId, inputProps) => {
     getCompositions(serveUrl, {
       inputProps: normalized,
       timeoutInMilliseconds: 180000,
+      browserExecutable: CHROME_EXECUTABLE,
       chromiumOptions: {
         args: [
           "--no-sandbox",
@@ -184,6 +196,7 @@ const renderJob = async (jobId, inputProps) => {
     codec: "h264",
     outputLocation,
     onProgress: () => {},
+    browserExecutable: CHROME_EXECUTABLE,
     chromiumOptions: {
       disableWebSecurity: true,
       args: [
@@ -325,21 +338,6 @@ const respondWithJob = (req, res, jobId, { forceDownload = false } = {}) => {
         : undefined,
   });
 };
-
-// Root endpoint for service info
-app.get("/", (_req, res) => {
-  res.json({ 
-    service: "ReelSmith",
-    version: "1.0.0",
-    endpoints: {
-      health: "GET /health",
-      render_sync: "POST /render",
-      render_async: "POST /render/async",
-      status: "GET /render/status/:jobId",
-      result: "GET /render/result/:jobId"
-    }
-  });
-});
 
 app.get("/health", (_req, res) => {
   res.json({ ok: true });
