@@ -140,8 +140,8 @@ const renderJob = async (jobId, inputProps) => {
 
   const serveUrl = await withTimeout(
     getServeUrl(),
-    60000,
-    "Bundle timed out after 60s"
+    180000,
+    "Bundle timed out after 3 minutes"
   );
   
   console.log(`Using Chrome at: ${CHROME_EXECUTABLE}`);
