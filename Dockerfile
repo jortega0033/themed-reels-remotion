@@ -35,5 +35,8 @@ RUN npm ci --include=dev
 
 COPY . .
 
+# Pre-bundle Remotion at build time (saves 60-90s on cold starts)
+RUN npx remotion bundle src/index.ts --out-dir=bundle --public-dir=public
+
 EXPOSE 8080
 CMD ["npm", "start"]

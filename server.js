@@ -2,7 +2,6 @@ const path = require("path");
 const fs = require("fs");
 const { randomUUID } = require("crypto");
 const express = require("express");
-const { bundle } = require("@remotion/bundler");
 const { getCompositions, renderMedia } = require("@remotion/renderer");
 const { Storage } = require("@google-cloud/storage");
 const { z } = require("zod");
@@ -45,20 +44,9 @@ const requireAuth = (req, res, next) => {
   return res.status(401).json({ error: "Unauthorized" });
 };
 
-// Bundle once and reuse across requests
-let serveUrlPromise;
-const getServeUrl = () => {
-  if (!serveUrlPromise) {
-    serveUrlPromise = bundle({
-      entryPoint: ENTRY_POINT,
-      publicDir: path.join(process.cwd(), "public"),
-      onProgress: (progress) => {
-        if (progress % 10 === 0) console.log(`Bundling: ${progress}%`);
-      },
-    });
-  }
-  return serveUrlPromise;
-};
+// Use pre-built bundle from Docker build (see Dockerfile)
+const BUNDLE_DIR = path.join(process.cwd(), "bundle");
+const getServeUrl = () => BUNDLE_DIR;
 
 const styleSchema = z.record(z.string(), z.unknown());
 
@@ -138,11 +126,7 @@ const renderJob = async (jobId, inputProps) => {
   const normalized = normalizeSpecInput(inputProps);
   if (!normalized) throw new Error("Invalid render spec");
 
-  const serveUrl = await withTimeout(
-    getServeUrl(),
-    180000,
-    "Bundle timed out after 3 minutes"
-  );
+  const serveUrl = getServeUrl();
   
   console.log(`Using Chrome at: ${CHROME_EXECUTABLE}`);
   
