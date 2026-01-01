@@ -41,3 +41,4 @@ npm run build
 ```
 
 Output: `out/video.mp4`
+# Auto-deploy test: Thu Jan  1 19:05:35 CET 2026
