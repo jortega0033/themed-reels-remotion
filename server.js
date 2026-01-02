@@ -236,15 +236,27 @@ const uploadToGcs = async (localPath) => {
   });
 
   const cloudUrl = `gs://${GCS_BUCKET}/${destination}`;
-  const [signedUrl] = await storage
-    .bucket(GCS_BUCKET)
-    .file(destination)
-    .getSignedUrl({
-      action: "read",
-      expires: Date.now() + GCS_SIGNED_URL_TTL_SECONDS * 1000,
-    });
+  const publicUrl = `https://storage.googleapis.com/${encodeURIComponent(
+    GCS_BUCKET
+  )}/${destination.split("/").map(encodeURIComponent).join("/")}`;
 
-  return { cloudUrl, signedUrl };
+  // Signed URLs are preferred (private bucket), but require iam.serviceAccounts.signBlob.
+  // If signing fails, still return the GCS URL so callers can fetch it if the bucket is public
+  // or if they have credentials.
+  let signedUrl;
+  try {
+    [signedUrl] = await storage
+      .bucket(GCS_BUCKET)
+      .file(destination)
+      .getSignedUrl({
+        action: "read",
+        expires: Date.now() + GCS_SIGNED_URL_TTL_SECONDS * 1000,
+      });
+  } catch (err) {
+    console.error("GCS signed URL generation failed", err);
+  }
+
+  return { cloudUrl, signedUrl, publicUrl };
 };
 
 // Simple in-memory job store (per-instance). For production, back with a DB or queue.
@@ -266,12 +278,16 @@ const startJob = async (jobId, inputProps) => {
     console.log(`[${jobId}] Render completed: ${output}`);
     let cloudUrl;
     let signedUrl;
+    let publicUrl;
 
     try {
       const uploadResult = await uploadToGcs(output);
       cloudUrl = uploadResult.cloudUrl;
       signedUrl = uploadResult.signedUrl;
-      if (cloudUrl || signedUrl) fs.rm(output, { force: true }, () => {});
+      publicUrl = uploadResult.publicUrl;
+
+      // If upload succeeded (cloudUrl exists), we can delete local output even if signing failed.
+      if (cloudUrl) fs.rm(output, { force: true }, () => {});
     } catch (uploadErr) {
       console.error("GCS upload failed", uploadErr);
     }
@@ -281,6 +297,7 @@ const startJob = async (jobId, inputProps) => {
       output: cloudUrl ? null : output,
       cloudUrl,
       signedUrl,
+      publicUrl,
       createdAt,
     });
   } catch (err) {
@@ -299,6 +316,7 @@ const respondWithJob = (req, res, jobId, { forceDownload = false } = {}) => {
 
   if (job.status === "completed" && wantsDownload) {
     if (job.signedUrl) return res.redirect(job.signedUrl);
+    if (job.publicUrl) return res.redirect(job.publicUrl);
     if (job.output) {
       return res.download(job.output, "video.mp4", (err) => {
         fs.rm(job.output, { force: true }, () => {});
@@ -315,9 +333,10 @@ const respondWithJob = (req, res, jobId, { forceDownload = false } = {}) => {
     error: job.error,
     cloudUrl: job.cloudUrl,
     signedUrl: job.signedUrl,
+    publicUrl: job.publicUrl,
     downloadUrl:
       job.status === "completed"
-        ? job.signedUrl || `/render/async/${jobId}?download=1`
+        ? job.signedUrl || job.publicUrl || `/render/async/${jobId}?download=1`
         : undefined,
   });
 };
