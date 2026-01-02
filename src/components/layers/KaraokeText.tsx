@@ -33,12 +33,26 @@ export const KaraokeText: React.FC<Props> = ({ layer, fps }) => {
   const style = (layer.props.style as CSSProperties | undefined) ?? {};
   const baseColor = (style.color as string | undefined) ?? "#ffffff";
   const activeColor = layer.props.highlightColor ?? baseColor;
+  
+  // Debug logging
+  if (frame === 0) {
+    console.log('KaraokeText Debug:', {
+      layerId: layer.id,
+      highlightColor: layer.props.highlightColor,
+      baseColor,
+      activeColor,
+      styleColor: style.color,
+    });
+  }
   const isHook = layer.id.toLowerCase().includes("hook");
   const verticalAlign =
     layer.props.layout?.verticalAlign ?? (isHook ? "top" : "center");
   const padding =
     layer.props.layout?.padding ?? (isHook ? "64px 48px 32px" : "48px");
   const opacityScale = Math.max(0, Math.min(1, layer.props.opacity ?? 1));
+  
+  // If opacity is explicitly set to 1, disable fade animations
+  const disableFades = layer.props.opacity === 1;
 
   const timedWords = useMemo(
     () => ensureTimedWords(layer.props.timings, layer.props.text, layer.durationInFrames, fps),
@@ -116,12 +130,16 @@ export const KaraokeText: React.FC<Props> = ({ layer, fps }) => {
           return chunk.words.map((word, index) => {
             const isActiveWord =
               frame >= word.startFrame && frame <= word.endFrame;
-            const wordOpacity = interpolate(
-              frame,
-              buildOpacityRange(word),
-              [0.7, 0.9, 1, 1, 0.95, 0.75],
-              { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
-            );
+            const wordOpacity = disableFades
+              ? 1
+              : interpolate(
+                  frame,
+                  buildOpacityRange(word),
+                  [0.7, 0.9, 1, 1, 0.95, 0.75],
+                  { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+                );
+
+            const finalChunkOpacity = disableFades ? 1 : chunkOpacity;
 
             return (
               <span
@@ -134,7 +152,7 @@ export const KaraokeText: React.FC<Props> = ({ layer, fps }) => {
                   textTransform: style.textTransform ?? "none",
                   color: isActiveWord ? activeColor : baseColor,
                   textShadow: style.textShadow,
-                  opacity: opacityScale * chunkOpacity * wordOpacity,
+                  opacity: opacityScale * finalChunkOpacity * wordOpacity,
                   transition: "color 0.2s ease",
                 }}
               >
