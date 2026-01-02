@@ -31,6 +31,7 @@ ENV NODE_ENV=production \
 WORKDIR /usr/src/app
 
 COPY package*.json ./
+COPY patches ./patches
 RUN npm ci --include=dev
 
 COPY . .
