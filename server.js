@@ -117,6 +117,21 @@ const renderSpecObjectSchema = z.object({
           text: z.string().min(1),
           style: styleSchema.optional(),
           timings: z.array(wordTimingSchema).nonempty().optional(),
+          opacity: z.number().min(0).max(1).optional(),
+          layout: z
+            .object({
+              verticalAlign: z.enum(["top", "center", "bottom"]).optional(),
+              padding: z.union([z.number().nonnegative(), z.string()]).optional(),
+            })
+            .optional(),
+          chunking: z
+            .object({
+              maxWords: z.number().int().positive().optional(),
+              pauseMs: z.number().nonnegative().optional(),
+              enabled: z.boolean().optional(),
+            })
+            .optional(),
+          highlightColor: z.string().optional(),
         }),
       }),
     ])

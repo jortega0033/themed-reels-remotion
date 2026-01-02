@@ -14,7 +14,6 @@ const sortTimeline = (layers: Layer[]): Layer[] =>
   [...layers].sort((a, b) => a.startFrame - b.startFrame);
 
 const normalizeSpec = (value: RenderSpecInput | undefined): RenderSpec => {
-  console.log('MasterComposition raw props', value);
   const candidate = coerceRenderSpecInput(value);
   const parsed = renderSpecInputSchema.safeParse(candidate);
 
@@ -23,7 +22,6 @@ const normalizeSpec = (value: RenderSpecInput | undefined): RenderSpec => {
   }
 
   const spec = Array.isArray(parsed.data) ? parsed.data[0] : parsed.data;
-  console.log('MasterComposition normalizeSpec: config', spec.config, 'timeline length', spec.timeline.length);
   return spec;
 };
 

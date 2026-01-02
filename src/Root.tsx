@@ -13,7 +13,6 @@ const resolveDuration = (spec: RenderSpec): number => {
 };
 
 const normalizeSpec = (value: RenderSpecInput | undefined): RenderSpec => {
-  console.log('normalizeSpec raw value', value);
   const candidate = coerceRenderSpecInput(value);
   const parsed = renderSpecInputSchema.safeParse(candidate);
   if (!parsed.success) {
@@ -21,7 +20,6 @@ const normalizeSpec = (value: RenderSpecInput | undefined): RenderSpec => {
   }
 
   const spec = Array.isArray(parsed.data) ? parsed.data[0] : parsed.data;
-  console.log('normalizeSpec: config', spec.config, 'timeline length', spec.timeline.length);
   return spec;
 };
 
