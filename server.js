@@ -22,8 +22,9 @@ const AUTH_TOKEN = process.env.RENDER_AUTH_TOKEN || process.env.AUTH_TOKEN;
 
 const storage = GCS_BUCKET ? new Storage() : null;
 
-// Job timeout: 10 minutes max (Cloud Run maximum)
-const JOB_TIMEOUT_MS = 10 * 60 * 1000;
+// Job timeout should be <= Cloud Run request timeout.
+// Default to 55 minutes to stay under the 60-minute max.
+const JOB_TIMEOUT_MS = Number(process.env.JOB_TIMEOUT_MS || 55 * 60 * 1000);
 
 // Utility: wrap a promise with a timeout
 const withTimeout = (promise, ms, message = "Operation timed out") =>
@@ -169,8 +170,8 @@ const renderJob = async (jobId, inputProps) => {
         ],
       },
     }),
-    180000,
-    "getCompositions timed out after 180s"
+    15 * 60 * 1000,
+    "getCompositions timed out after 900s"
   );
   console.log(`[${jobId}] Found ${comps.length} compositions`);
   
@@ -206,7 +207,7 @@ const renderJob = async (jobId, inputProps) => {
     },
     envVariables: {},
     logLevel: "info",
-    timeoutInMilliseconds: 480000, // 8 min max for actual render
+    timeoutInMilliseconds: 55 * 60 * 1000,
   });
 
   console.log(`[${jobId}] Render complete, file size: ${fs.statSync(outputLocation).size} bytes`);
