@@ -53,6 +53,8 @@ steps:
       - '1'
       - '--timeout'
       - '3600'
+      - '--cpu-boost'
+      - '--no-cpu-throttling'
       - '--allow-unauthenticated'
 
 images:
