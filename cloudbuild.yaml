@@ -46,7 +46,7 @@ steps:
       - '--memory'
       - '16Gi'
       - '--cpu'
-      - '8'
+      - '4'
       - '--concurrency'
       - '1'
       - '--max-instances'
