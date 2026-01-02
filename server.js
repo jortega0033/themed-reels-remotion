@@ -44,6 +44,13 @@ const requireAuth = (req, res, next) => {
   return res.status(401).json({ error: "Unauthorized" });
 };
 
+// For public download URLs: allow GET status/result without auth.
+// Keep POST endpoints protected to prevent abuse.
+const allowUnauthenticatedGet = (req, res, next) => {
+  if (req.method === "GET") return next();
+  return requireAuth(req, res, next);
+};
+
 // Use pre-built bundle from Docker build (see Dockerfile)
 const BUNDLE_DIR = path.join(process.cwd(), "bundle");
 const getServeUrl = () => BUNDLE_DIR;
@@ -356,15 +363,15 @@ app.post("/render/async", requireAuth, async (req, res) => {
   });
 });
 
-app.get("/render/async/:jobId", requireAuth, (req, res) =>
+app.get("/render/async/:jobId", allowUnauthenticatedGet, (req, res) =>
   respondWithJob(req, res, req.params.jobId)
 );
 
 // Backwards compatibility routes (delegating to combined handler)
-app.get("/render/status/:jobId", requireAuth, (req, res) =>
+app.get("/render/status/:jobId", allowUnauthenticatedGet, (req, res) =>
   respondWithJob(req, res, req.params.jobId)
 );
-app.get("/render/result/:jobId", requireAuth, (req, res) =>
+app.get("/render/result/:jobId", allowUnauthenticatedGet, (req, res) =>
   respondWithJob(req, res, req.params.jobId, { forceDownload: true })
 );
 
