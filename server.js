@@ -144,21 +144,14 @@ const renderJob = async (jobId, inputProps) => {
   const normalized = normalizeSpecInput(inputProps);
   if (!normalized) throw new Error("Invalid render spec");
 
-  // Verify browser binary exists
-  console.log(`[${jobId}] Checking browser binary at: ${CHROME_EXECUTABLE}`);
+  // Verify browser binary exists (silent check)
   try {
     const stats = fs.statSync(CHROME_EXECUTABLE);
-    console.log(`[${jobId}] Browser binary found, size: ${stats.size} bytes, executable: ${!!(stats.mode & 0o111)}`);
-    if (!(stats.mode & 0o111)) {
-      console.log(`[${jobId}] Browser binary is not executable! Attempting to chmod +x...`);
-      fs.chmodSync(CHROME_EXECUTABLE, 0o755);
-    }
+    if (!(stats.mode & 0o111)) fs.chmodSync(CHROME_EXECUTABLE, 0o755);
   } catch (err) {
-    console.error(`[${jobId}] Browser binary not found!`, err);
+    console.error(`[${jobId}] Chrome binary not found at ${CHROME_EXECUTABLE}`);
     throw new Error(`Chrome binary not found at ${CHROME_EXECUTABLE}`);
   }
-
-  console.log(`[${jobId}] Getting compositions...`);
   const serveUrl = getServeUrl();
   
   const comps = await withTimeout(
@@ -180,14 +173,11 @@ const renderJob = async (jobId, inputProps) => {
     15 * 60 * 1000,
     "getCompositions timed out after 900s"
   );
-  console.log(`[${jobId}] Found ${comps.length} compositions`);
   
   const composition = comps.find((c) => c.id === COMPOSITION_ID);
   if (!composition) throw new Error(`Composition ${COMPOSITION_ID} not found`);
-  console.log(`[${jobId}] Using composition: ${COMPOSITION_ID}, duration: ${composition.durationInFrames} frames at ${composition.fps}fps`);
 
   const outputLocation = path.join(TMP_DIR, `render-${jobId}.mp4`);
-  console.log(`[${jobId}] Starting renderMedia to ${outputLocation}...`);
 
   await renderMedia({
     serveUrl,
@@ -195,11 +185,6 @@ const renderJob = async (jobId, inputProps) => {
     inputProps: normalized,
     codec: "h264",
     outputLocation,
-    onProgress: ({ renderedFrames, encodedFrames, progress }) => {
-      if (renderedFrames % 30 === 0) {
-        console.log(`[${jobId}] Progress: ${Math.round(progress * 100)}% (rendered: ${renderedFrames}, encoded: ${encodedFrames})`);
-      }
-    },
     browserExecutable: CHROME_EXECUTABLE,
     chromiumOptions: {
       disableWebSecurity: true,
@@ -217,7 +202,6 @@ const renderJob = async (jobId, inputProps) => {
     timeoutInMilliseconds: 55 * 60 * 1000,
   });
 
-  console.log(`[${jobId}] Render complete, file size: ${fs.statSync(outputLocation).size} bytes`);
   return outputLocation;
 };
 
@@ -265,17 +249,14 @@ const jobs = new Map();
 const startJob = async (jobId, inputProps) => {
   const createdAt = Date.now();
   jobs.set(jobId, { status: "processing", createdAt });
-  console.log(`[${jobId}] Job started at ${new Date(createdAt).toISOString()}`);
   
   try {
-    // Wrap entire job with configured timeout
-    console.log(`[${jobId}] Starting render with ${JOB_TIMEOUT_MS}ms timeout`);
     const output = await withTimeout(
       renderJob(jobId, inputProps),
       JOB_TIMEOUT_MS,
       `Job timed out after ${JOB_TIMEOUT_MS / 1000} seconds`
     );
-    console.log(`[${jobId}] Render completed: ${output}`);
+    
     let cloudUrl;
     let signedUrl;
     let publicUrl;
