@@ -44,8 +44,7 @@ npm run build
 
 | Environment | URL |
 |-------------|-----|
-| Production | `https://render.urabes.com` |
-| Cloud Run | `https://remotion-renderer-78322869962.us-central1.run.app` |
+| Production | `https://remotion-renderer-78322869962.us-east1.run.app` |
 
 ### Authentication
 

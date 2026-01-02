@@ -10,7 +10,6 @@ const app = express();
 app.use(express.json({ limit: "1mb" }));
 
 const PORT = process.env.PORT || 8080;
-const ENTRY_POINT = path.join(process.cwd(), "src", "index.ts");
 const COMPOSITION_ID = "MasterComposition";
 const TMP_DIR = process.env.TMP_DIR || "/tmp";
 const GCS_BUCKET = process.env.GCS_BUCKET;
@@ -331,10 +330,6 @@ const respondWithJob = (req, res, jobId, { forceDownload = false } = {}) => {
     cloudUrl: job.cloudUrl,
     signedUrl: job.signedUrl,
     publicUrl: job.publicUrl,
-    downloadUrl:
-      job.status === "completed"
-        ? job.signedUrl || job.publicUrl || `/render/async/${jobId}?download=1`
-        : undefined,
   });
 };
 
@@ -375,7 +370,6 @@ app.post("/render/async", requireAuth, async (req, res) => {
     jobId,
     status: "queued",
     jobUrl: `/render/async/${jobId}`,
-    downloadUrl: `/render/async/${jobId}?download=1`,
   });
 });
 
