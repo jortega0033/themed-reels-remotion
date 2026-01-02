@@ -56,6 +56,8 @@ steps:
       - '--cpu-boost'
       - '--no-cpu-throttling'
       - '--allow-unauthenticated'
+      - '--set-env-vars'
+      - 'GCS_BUCKET=n8n-server-482722-renders,GCS_PREFIX=renders'
 
 images:
   - 'gcr.io/$PROJECT_ID/remotion-renderer:$COMMIT_SHA'

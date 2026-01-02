@@ -281,11 +281,12 @@ const startJob = async (jobId, inputProps) => {
       cloudUrl = uploadResult.cloudUrl;
       signedUrl = uploadResult.signedUrl;
       publicUrl = uploadResult.publicUrl;
+      console.log(`[${jobId}] GCS upload result:`, { cloudUrl, signedUrl: !!signedUrl, publicUrl });
 
       // If upload succeeded (cloudUrl exists), we can delete local output even if signing failed.
       if (cloudUrl) fs.rm(output, { force: true }, () => {});
     } catch (uploadErr) {
-      console.error("GCS upload failed", uploadErr);
+      console.error(`[${jobId}] GCS upload failed:`, uploadErr);
     }
 
     jobs.set(jobId, {
@@ -393,6 +394,8 @@ app.get("/render/result/:jobId", allowUnauthenticatedGet, (req, res) =>
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`Render server listening on port ${PORT}`);
+    console.log(`GCS_BUCKET: ${GCS_BUCKET || 'NOT SET'}`);
+    console.log(`GCS configured: ${storage ? 'YES' : 'NO'}`);
   });
 }
 
