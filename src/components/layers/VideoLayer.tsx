@@ -1,5 +1,5 @@
 import React, {CSSProperties} from 'react';
-import {OffthreadVideo} from 'remotion';
+import {Video} from 'remotion';
 import {AssetMap, VideoLayer as VideoLayerType} from '../../types/schema';
 
 interface Props {
@@ -24,7 +24,7 @@ export const VideoLayer: React.FC<Props> = ({layer, assets}) => {
   const style = (layer.props.style as CSSProperties | undefined) ?? {};
 
   return (
-    <OffthreadVideo
+    <Video
       src={src}
       muted={layer.props.muted ?? false}
       loop={layer.props.loop ?? false}
