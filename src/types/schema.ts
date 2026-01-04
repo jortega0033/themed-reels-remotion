@@ -24,6 +24,7 @@ const videoLayerSchema = baseLayerSchema.extend({
   props: z.object({
     src: z.string().min(1),
     muted: z.boolean().optional(),
+    loop: z.boolean().optional(),
     style: styleSchema.optional(),
   }),
 });

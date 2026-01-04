@@ -27,6 +27,7 @@ export const VideoLayer: React.FC<Props> = ({layer, assets}) => {
     <OffthreadVideo
       src={src}
       muted={layer.props.muted ?? false}
+      loop={layer.props.loop ?? false}
       style={{
         width: '100%',
         height: '100%',
