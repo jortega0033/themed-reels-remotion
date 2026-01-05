@@ -4,10 +4,10 @@
       "width": 1080,
       "height": 1920,
       "fps": 30,
-      "durationInFrames": 6264
+      "durationInFrames": 7176
     },
     "assets": {
-      "voice_track_1": "https://storage.googleapis.com/download/storage/v1/b/remotion-render-storage/o/renders%2F674%2Fvoiceover.mp3?generation=1767610403354605&alt=media",
+      "voice_track_1": "https://storage.googleapis.com/download/storage/v1/b/remotion-render-storage/o/renders%2F683%2Fvoiceover.mp3?generation=1767633215023748&alt=media",
       "video_clip_1": "https://videos.pexels.com/video-files/19245860/19245860-hd_1080_1920_60fps.mp4"
     },
     "timeline": [
@@ -15,7 +15,7 @@
         "id": "layer_video_1",
         "type": "Video",
         "startFrame": 0,
-        "durationInFrames": 6264,
+        "durationInFrames": 7176,
         "props": {
           "src": "video_clip_1",
           "muted": true,
@@ -29,7 +29,7 @@
         "id": "layer_overlay_scrim",
         "type": "Shape",
         "startFrame": 0,
-        "durationInFrames": 6264,
+        "durationInFrames": 7176,
         "props": {
           "style": {
             "backgroundColor": "#000000",
@@ -43,7 +43,7 @@
         "id": "layer_voice",
         "type": "Audio",
         "startFrame": 0,
-        "durationInFrames": 6264,
+        "durationInFrames": 7176,
         "props": {
           "src": "voice_track_1",
           "volume": 1,
@@ -54,1983 +54,2533 @@
         "id": "layer_karaoke",
         "type": "KaraokeText",
         "startFrame": 0,
-        "durationInFrames": 6264,
+        "durationInFrames": 7176,
         "props": {
-          "text": "“Diyos ko! Diyos ko!” Ang tanging nausal ko habang nararamdaman ang unti-unti niyang pagbayo sa aking basang pagkababae. Dahil hindi ko na rin kayang tumutol pa sa matanda, labag man sa aking kalooban ay ibinuka ko na lang ang aking mga hita upang lubusan nang tanggapin ang mainit na lamáng pumapasok sa aking katawan. Ipapasok, ilalabas—paulit-ulit. Napapansin ko na tila gustong arukin ng matanda ang kailaliman ng aking hiyas dahil sa patindi nang patinding pagbaon ng kanyang sandata. Pakiramdam ko ay banat na banat ang aking puwerta sa bawat madiing paghataw niya. Habang ginagawa niya iyon, unti-unti siyang dumapa upang ang kanyang dibdib ay dumiin sa aking naninigas na mga suso. Hinalik-halikan niya at kinagat ang aking leeg, at dinila-dilaan ang aking mga tainga na nagdulot sa akin ng nakapanghihilakbot na kiliti. Bayo dito, bayo doon ang walang humpay niyang ginawa; ako naman ay wala nang nagawa kundi magpaubaya sa makamundong pagnanasa. Dinakma niya ang pisngi ng aking puwetan upang lalong maging madiin at malalim ang bawat tatarak ng kanyang kaselanan. “Yessss… yesss!!! Ahhhh!!” ang kanyang halinghing habang ang matigas niyang sandata ay walang humpay sa pag-hindot sa akin. Parang mapupunit ang aking pagkababae sa pagkakabukaka ng aking mga hita, mapagbigyan lamang ang walang pagod na pagkilos ng matikas na panauhin! Mayamaya ay naramdaman ko ang paghugot ng kanyang tarugo sa aking masikip at basang-basang lagusan. Ilang segundo ang lumipas bago niya ito biglang ipinasok nang pailalim at baong-baon! Halos magiba ang aming mga balakang sa tindi ng salpukan. Dahan-dahan, unti-unti—hugot-baon, hugot-baon ang ginagawa niya sa aking walang kalaban-labang hiyas. “Diyos ko… Diyos ko! Hindi dapat mangyari ito!” paulit-ulit kong sambit habang nararamdamang nawawala na ako sa katinuan. Tuluyan na akong bumigay sa mapanghimasok na sandata na buong-buong bumabaon sa kailaliman ng aking nanginginig na hiyas. Pakiramdam ko ay tila gustong higupin ng aking laman at ayaw nang pakawalan ang kanyang utin tuwing ito ay dahan-dahang huhugutin. Napapasama na ang aking balakang sa bawat pag-angat, at napapagiling naman sa tuwing ito ay kanyang uulusin. “AAAggggghhhhh… Oh… ohhh… ohhhhhh… ahhhhh, Diyos ko! Hindi!” ang aking daing habang unti-unti na namang tumitirik ang aking mga mata. May namumuo na namang sarap na gustong kumawala mula sa aking sinapupunan habang ibinabaon niya nang pailalim ang kanyang utin sa bukang-buka kong hiyas. Iginigiling niya ang kanyang balakang sa bawat pagbaon sa aking kaselanang lubusan nang nagpaubaya.",
+          "text": "“Ahhh… ang saráp mo!” hiyáw niya habang tila bumabaón ang kanyang mga daliri sa pagkakahawak sa aking malambot at makinis na mga pigî. Sinundan ito ng matitindí at mabibilís na pag-ulós. Ang aking nanginginig na katawan, na sinabayan na rin ng paghigpít ng aking kaselanan, ay napapasunod na sa bawat galáw niya. Ipinulupot ko ang aking mga hita sa kanyang likuran at hinatak ang kanyang likód upang mas maging madiín ang aming pagkakadikit. Napangisi ang matanda nang maramdaman ang nagtutumigás kong mga utong na dumidiín sa kanyang dibdib. “Ang lambot ng mga suso mo, ang saráp lamasín! At ang mga malarosas mong utong, ang saráp sipsipín!” bulong niya sa gitna ng init ng katawan. Ako’y dumadaing na at umuungol. Hindi na ako napapaiyak, kundi napapasigáw na sa saráp! “Yes! Sige pa! Idiín mo!” hiyáw ko. “Bayuhín mo pa ang hiyas ko! Bilísan mo! Gusto ko ’yan!” Lalo pang bumilís ang kanyang paggaláw—mabilís, mahaba, at pailalim. Tila tumutunóg ang aming mga balakang sa lakás ng salpukan. Pati ang katas na lumalabas sa akin ay nagkakaroon na rin ng tunóg dahil sa walang habas na pagkikiskisan. Habang ginagawa ito ni Mr. Sy, hindi na rin niya maiwasang humiyáw sa saráp. Halos mapipî ang aking pagkababae sa mga sandaling iyon! Sa gitna ng tiimbagang na pakiramdam, naramdaman ko ang pagdaloy ng likido ng saráp mula sa aking sinapupunan. “Malapit na ako! Malapit na ako!” sigáw ko habang sinasalubong ang bawat bayó niya. Pinilit kong pigain ang kanyang pagkalalaki gamit ang aking muscle control. Naramdaman ko ang mainit-init na likidong dumilíg sa aking kaloob-looban, kasabay ng sarili kong katas na umágos palabas. Naghalo ang aming mga likido. Nanginig ang aming mga kalamnan at napakisáy sa rurok ng saráp. Nanghina si Mr. Sy at dumagan sa akin sa sofa, habang ako naman ay nakahiga lang at nakabukakâ, tila nawalan ng lakás. Ilang minuto ang lumipas bago kami tumayô at nag-ayos ng sarili. Tahimik kaming nagbihis, walang imikan. Pagkatapos, tinanong niya ako kung posibleng mabuntis ako. Mahina akong tumugón na hindi iyon mangyayari dahil regular akong gumagamit ng pills; maliit pa ang aming anak at hindi pa namin gustong sundan. Kumuha si Mr. Sy ng pera mula sa kanyang kaha-de-yero at iniabot sa akin. Hindi ako makatingin nang diretso habang kinukuha iyon—humigit-kumulang limampung libong piso na bunga ng panandaliang tawag ng laman. Dali-dali akong umalis nang walang paalam. Isang pabulong na “Salamat” na lamang ang narinig ko mula sa kanya. Nakaligtás ang anak ko sa tiyak na kapahamakan dahil sa perang iyon. Nakakuha na rin ng trabaho ang mister ko sa isang malaking kumpanya. Si Mr. Sy? Balita ko ay inatake siya sa puso noong gabing iyon, pagkatapos ng aming pagkikita. Siguro ay hindi kinaya ng kanyang katawan. Para sa akin, ang lihim na karanasang ito ay mananatiling nakabaón sa limot hangga't ako’y nabubuhay. Ipinangako ko sa sarili ko na hindi ko na ito uulitin at habambuhay na lang iaalay ang aking sarili sa aking mapagmahal na asawa. Ang nangyari ay isang bangungot na kailangan ko nang talikuran.",
           "style": {
             "fontFamily": "Anton, Impact, Roboto, sans-serif",
             "fontSize": 58,
             "fontWeight": 700,
             "color": "#FFFFFF",
-            "textAlign": "left",
+            "textAlign": "center",
             "textShadow": "0 4px 6px rgba(0,0,0,0.9)"
           },
           "layout": {
             "verticalAlign": "bottom",
-            "padding": "0px 60px 30%"
+            "padding": "0px 60px 180px"
           },
           "opacity": 1,
           "highlightColor": "#E60000",
           "timings": [
             {
-              "word": "“Diyos",
+              "word": "“Ahhh…",
               "start": 0,
-              "end": 0.476
-            },
-            {
-              "word": "ko!",
-              "start": 0.569,
-              "end": 0.789
-            },
-            {
-              "word": "Diyos",
-              "start": 0.824,
-              "end": 1.115
-            },
-            {
-              "word": "ko!”",
-              "start": 1.207,
-              "end": 1.614
-            },
-            {
-              "word": "Ang",
-              "start": 2.218,
-              "end": 2.415
-            },
-            {
-              "word": "tanging",
-              "start": 2.473,
-              "end": 2.821
-            },
-            {
-              "word": "nausal",
-              "start": 2.879,
-              "end": 3.367
-            },
-            {
-              "word": "ko",
-              "start": 3.448,
-              "end": 3.564
-            },
-            {
-              "word": "habang",
-              "start": 3.622,
-              "end": 3.936
-            },
-            {
-              "word": "nararamdaman",
-              "start": 3.971,
-              "end": 4.656
+              "end": 0.859
             },
             {
               "word": "ang",
-              "start": 4.714,
-              "end": 4.795
+              "start": 1.242,
+              "end": 1.451
             },
             {
-              "word": "unti-unti",
-              "start": 4.888,
-              "end": 5.526
+              "word": "saráp",
+              "start": 1.533,
+              "end": 2.02
             },
             {
-              "word": "niyang",
-              "start": 5.584,
-              "end": 5.747
+              "word": "mo!”",
+              "start": 2.148,
+              "end": 2.67
             },
             {
-              "word": "pagbayo",
-              "start": 5.817,
-              "end": 6.478
+              "word": "hiyáw",
+              "start": 3.111,
+              "end": 3.425
+            },
+            {
+              "word": "niya",
+              "start": 3.495,
+              "end": 3.727
+            },
+            {
+              "word": "habang",
+              "start": 3.796,
+              "end": 4.098
+            },
+            {
+              "word": "tila",
+              "start": 4.156,
+              "end": 4.435
+            },
+            {
+              "word": "bumabaón",
+              "start": 4.493,
+              "end": 5.166
+            },
+            {
+              "word": "ang",
+              "start": 5.224,
+              "end": 5.317
+            },
+            {
+              "word": "kanyang",
+              "start": 5.364,
+              "end": 5.654
+            },
+            {
+              "word": "mga",
+              "start": 5.689,
+              "end": 5.875
+            },
+            {
+              "word": "daliri",
+              "start": 5.944,
+              "end": 6.351
             },
             {
               "word": "sa",
-              "start": 6.803,
-              "end": 7.001
+              "start": 6.397,
+              "end": 6.49
+            },
+            {
+              "word": "pagkakahawak",
+              "start": 6.536,
+              "end": 7.326
+            },
+            {
+              "word": "sa",
+              "start": 7.384,
+              "end": 7.512
             },
             {
               "word": "aking",
-              "start": 7.07,
-              "end": 7.384
-            },
-            {
-              "word": "basang",
-              "start": 7.43,
+              "start": 7.535,
               "end": 7.732
             },
             {
-              "word": "pagkababae.",
-              "start": 7.814,
-              "end": 8.742
+              "word": "malambot",
+              "start": 7.779,
+              "end": 8.348
             },
             {
-              "word": "Dahil",
-              "start": 9.555,
-              "end": 9.845
+              "word": "at",
+              "start": 8.858,
+              "end": 9.056
             },
             {
-              "word": "hindi",
-              "start": 9.892,
-              "end": 10.124
-            },
-            {
-              "word": "ko",
-              "start": 10.182,
-              "end": 10.263
+              "word": "makinis",
+              "start": 9.137,
+              "end": 9.694
             },
             {
               "word": "na",
-              "start": 10.31,
-              "end": 10.379
+              "start": 9.787,
+              "end": 9.868
             },
             {
-              "word": "rin",
-              "start": 10.414,
-              "end": 10.542
+              "word": "mga",
+              "start": 9.915,
+              "end": 10.077
             },
             {
-              "word": "kayang",
-              "start": 10.6,
-              "end": 10.867
+              "word": "pigî.",
+              "start": 10.147,
+              "end": 10.89
             },
             {
-              "word": "tumutol",
-              "start": 10.925,
-              "end": 11.331
+              "word": "Sinundan",
+              "start": 11.494,
+              "end": 11.97
             },
             {
-              "word": "pa",
-              "start": 11.401,
-              "end": 11.482
+              "word": "ito",
+              "start": 12.04,
+              "end": 12.411
             },
             {
-              "word": "sa",
-              "start": 11.517,
-              "end": 11.61
+              "word": "ng",
+              "start": 12.528,
+              "end": 12.667
             },
             {
-              "word": "matanda,",
-              "start": 11.657,
-              "end": 12.376
+              "word": "matitindí",
+              "start": 12.713,
+              "end": 13.514
             },
             {
-              "word": "labag",
-              "start": 12.818,
-              "end": 13.166
+              "word": "at",
+              "start": 13.793,
+              "end": 13.979
             },
             {
-              "word": "man",
-              "start": 13.236,
-              "end": 13.421
+              "word": "mabibilís",
+              "start": 14.06,
+              "end": 14.791
             },
             {
-              "word": "sa",
-              "start": 13.491,
-              "end": 13.595
+              "word": "na",
+              "start": 14.884,
+              "end": 14.966
             },
             {
-              "word": "aking",
-              "start": 13.642,
-              "end": 13.944
-            },
-            {
-              "word": "kalooban",
-              "start": 13.979,
-              "end": 14.652
-            },
-            {
-              "word": "ay",
-              "start": 14.977,
-              "end": 15.163
-            },
-            {
-              "word": "ibinuka",
-              "start": 15.221,
+              "word": "pag-ulós.",
+              "start": 15.012,
               "end": 15.825
             },
             {
-              "word": "ko",
-              "start": 15.871,
-              "end": 15.952
-            },
-            {
-              "word": "na",
-              "start": 16.022,
-              "end": 16.103
-            },
-            {
-              "word": "lang",
-              "start": 16.15,
-              "end": 16.37
-            },
-            {
-              "word": "ang",
-              "start": 16.451,
-              "end": 16.568
+              "word": "Ang",
+              "start": 16.034,
+              "end": 16.185
             },
             {
               "word": "aking",
-              "start": 16.637,
-              "end": 16.951
-            },
-            {
-              "word": "mga",
-              "start": 17.009,
-              "end": 17.206
-            },
-            {
-              "word": "hita",
-              "start": 17.264,
-              "end": 17.682
-            },
-            {
-              "word": "upang",
-              "start": 17.798,
-              "end": 18.135
-            },
-            {
-              "word": "lubusan",
-              "start": 18.181,
-              "end": 18.646
-            },
-            {
-              "word": "nang",
-              "start": 18.692,
-              "end": 18.832
-            },
-            {
-              "word": "tanggapin",
-              "start": 18.901,
-              "end": 19.458
-            },
-            {
-              "word": "ang",
-              "start": 19.517,
-              "end": 19.621
-            },
-            {
-              "word": "mainit",
-              "start": 19.667,
-              "end": 20.167
-            },
-            {
-              "word": "na",
-              "start": 20.225,
-              "end": 20.271
-            },
-            {
-              "word": "lamáng",
-              "start": 20.329,
-              "end": 20.643
-            },
-            {
-              "word": "pumapasok",
-              "start": 20.701,
-              "end": 21.362
-            },
-            {
-              "word": "sa",
-              "start": 21.432,
-              "end": 21.513
-            },
-            {
-              "word": "aking",
-              "start": 21.56,
-              "end": 21.862
-            },
-            {
-              "word": "katawan.",
-              "start": 21.908,
-              "end": 22.593
-            },
-            {
-              "word": "Ipapasok,",
-              "start": 23.406,
-              "end": 24.404
-            },
-            {
-              "word": "ilalabas—paulit-ulit.",
-              "start": 24.578,
-              "end": 26.924
-            },
-            {
-              "word": "Napapansin",
-              "start": 27.876,
-              "end": 28.526
-            },
-            {
-              "word": "ko",
-              "start": 28.607,
-              "end": 28.77
-            },
-            {
-              "word": "na",
-              "start": 28.839,
-              "end": 28.921
-            },
-            {
-              "word": "tila",
-              "start": 28.979,
-              "end": 29.222
-            },
-            {
-              "word": "gustong",
-              "start": 29.269,
-              "end": 29.617
-            },
-            {
-              "word": "arukin",
-              "start": 29.687,
-              "end": 30.151
-            },
-            {
-              "word": "ng",
-              "start": 30.174,
-              "end": 30.291
-            },
-            {
-              "word": "matanda",
-              "start": 30.325,
-              "end": 30.836
-            },
-            {
-              "word": "ang",
-              "start": 30.906,
-              "end": 31.022
-            },
-            {
-              "word": "kailaliman",
-              "start": 31.057,
-              "end": 31.661
-            },
-            {
-              "word": "ng",
-              "start": 31.695,
-              "end": 31.8
-            },
-            {
-              "word": "aking",
-              "start": 31.846,
-              "end": 32.148
-            },
-            {
-              "word": "hiyas",
-              "start": 32.183,
-              "end": 32.578
-            },
-            {
-              "word": "dahil",
-              "start": 32.671,
-              "end": 32.903
-            },
-            {
-              "word": "sa",
-              "start": 32.949,
-              "end": 33.042
-            },
-            {
-              "word": "patindi",
-              "start": 33.089,
-              "end": 33.657
-            },
-            {
-              "word": "nang",
-              "start": 33.866,
-              "end": 34.041
-            },
-            {
-              "word": "patinding",
-              "start": 34.099,
-              "end": 34.575
-            },
-            {
-              "word": "pagbaon",
-              "start": 34.633,
-              "end": 35.213
-            },
-            {
-              "word": "ng",
-              "start": 35.457,
-              "end": 35.631
-            },
-            {
-              "word": "kanyang",
-              "start": 35.678,
-              "end": 36.003
-            },
-            {
-              "word": "sandata.",
-              "start": 36.049,
-              "end": 36.804
-            },
-            {
-              "word": "Pakiramdam",
-              "start": 38.104,
-              "end": 38.719
-            },
-            {
-              "word": "ko",
-              "start": 38.812,
-              "end": 39.068
-            },
-            {
-              "word": "ay",
-              "start": 39.242,
-              "end": 39.37
-            },
-            {
-              "word": "banat",
-              "start": 39.439,
-              "end": 39.753
-            },
-            {
-              "word": "na",
-              "start": 39.811,
-              "end": 39.869
-            },
-            {
-              "word": "banat",
-              "start": 39.927,
-              "end": 40.205
-            },
-            {
-              "word": "ang",
-              "start": 40.275,
-              "end": 40.345
-            },
-            {
-              "word": "aking",
-              "start": 40.403,
-              "end": 40.705
-            },
-            {
-              "word": "puwerta",
-              "start": 40.763,
-              "end": 41.192
-            },
-            {
-              "word": "sa",
-              "start": 41.262,
-              "end": 41.378
-            },
-            {
-              "word": "bawat",
-              "start": 41.436,
-              "end": 41.75
-            },
-            {
-              "word": "madiing",
-              "start": 41.819,
-              "end": 42.156
-            },
-            {
-              "word": "paghataw",
-              "start": 42.202,
-              "end": 42.655
-            },
-            {
-              "word": "niya.",
-              "start": 42.702,
-              "end": 43.143
-            },
-            {
-              "word": "Habang",
-              "start": 43.746,
-              "end": 44.072
-            },
-            {
-              "word": "ginagawa",
-              "start": 44.095,
-              "end": 44.617
-            },
-            {
-              "word": "niya",
-              "start": 44.687,
-              "end": 44.78
-            },
-            {
-              "word": "iyon,",
-              "start": 44.826,
-              "end": 45.372
-            },
-            {
-              "word": "unti-unti",
-              "start": 45.651,
-              "end": 46.208
-            },
-            {
-              "word": "siyang",
-              "start": 46.266,
-              "end": 46.428
-            },
-            {
-              "word": "dumapa",
-              "start": 46.486,
-              "end": 46.962
-            },
-            {
-              "word": "upang",
-              "start": 47.044,
-              "end": 47.346
-            },
-            {
-              "word": "ang",
-              "start": 47.404,
-              "end": 47.497
-            },
-            {
-              "word": "kanyang",
-              "start": 47.555,
-              "end": 47.845
-            },
-            {
-              "word": "dibdib",
-              "start": 47.891,
-              "end": 48.379
-            },
-            {
-              "word": "ay",
-              "start": 48.623,
-              "end": 48.774
-            },
-            {
-              "word": "dumiin",
-              "start": 48.832,
-              "end": 49.377
-            },
-            {
-              "word": "sa",
-              "start": 49.459,
-              "end": 49.563
-            },
-            {
-              "word": "aking",
-              "start": 49.633,
-              "end": 49.935
-            },
-            {
-              "word": "naninigas",
-              "start": 49.981,
-              "end": 50.562
-            },
-            {
-              "word": "na",
-              "start": 50.643,
-              "end": 50.701
-            },
-            {
-              "word": "mga",
-              "start": 50.747,
-              "end": 50.921
-            },
-            {
-              "word": "suso.",
-              "start": 50.98,
-              "end": 51.606
-            },
-            {
-              "word": "Hinalik-halikan",
-              "start": 52.419,
-              "end": 53.313
-            },
-            {
-              "word": "niya",
-              "start": 53.336,
-              "end": 53.627
-            },
-            {
-              "word": "at",
-              "start": 53.87,
-              "end": 54.033
-            },
-            {
-              "word": "kinagat",
-              "start": 54.091,
-              "end": 54.59
-            },
-            {
-              "word": "ang",
-              "start": 54.671,
-              "end": 54.764
-            },
-            {
-              "word": "aking",
-              "start": 54.822,
-              "end": 55.136
-            },
-            {
-              "word": "leeg,",
-              "start": 55.182,
-              "end": 55.716
-            },
-            {
-              "word": "at",
-              "start": 56.099,
-              "end": 56.25
-            },
-            {
-              "word": "dinila-dilaan",
-              "start": 56.308,
-              "end": 57.133
-            },
-            {
-              "word": "ang",
-              "start": 57.191,
-              "end": 57.272
-            },
-            {
-              "word": "aking",
-              "start": 57.353,
-              "end": 57.701
-            },
-            {
-              "word": "mga",
-              "start": 57.736,
-              "end": 57.934
-            },
-            {
-              "word": "tainga",
-              "start": 57.992,
-              "end": 58.572
-            },
-            {
-              "word": "na",
-              "start": 58.955,
-              "end": 59.06
-            },
-            {
-              "word": "nagdulot",
-              "start": 59.095,
-              "end": 59.629
-            },
-            {
-              "word": "sa",
-              "start": 59.687,
-              "end": 59.78
-            },
-            {
-              "word": "akin",
-              "start": 59.861,
-              "end": 60.337
-            },
-            {
-              "word": "ng",
-              "start": 60.453,
-              "end": 60.592
-            },
-            {
-              "word": "nakapanghihilakbot",
-              "start": 60.627,
-              "end": 61.753
-            },
-            {
-              "word": "na",
-              "start": 61.869,
-              "end": 61.951
-            },
-            {
-              "word": "kiliti.",
-              "start": 61.997,
-              "end": 62.729
-            },
-            {
-              "word": "Bayo",
-              "start": 63.17,
-              "end": 63.472
-            },
-            {
-              "word": "dito,",
-              "start": 63.53,
-              "end": 64.215
-            },
-            {
-              "word": "bayo",
-              "start": 64.54,
-              "end": 64.865
-            },
-            {
-              "word": "doon",
-              "start": 64.923,
-              "end": 65.387
-            },
-            {
-              "word": "ang",
-              "start": 65.666,
-              "end": 65.852
-            },
-            {
-              "word": "walang",
-              "start": 65.921,
-              "end": 66.235
-            },
-            {
-              "word": "humpay",
-              "start": 66.304,
-              "end": 66.711
-            },
-            {
-              "word": "niyang",
-              "start": 66.769,
-              "end": 66.955
-            },
-            {
-              "word": "ginawa;",
-              "start": 66.989,
-              "end": 67.64
-            },
-            {
-              "word": "ako",
-              "start": 68.336,
-              "end": 68.568
-            },
-            {
-              "word": "naman",
-              "start": 68.626,
-              "end": 68.94
-            },
-            {
-              "word": "ay",
-              "start": 69.01,
-              "end": 69.102
-            },
-            {
-              "word": "wala",
-              "start": 69.16,
-              "end": 69.404
-            },
-            {
-              "word": "nang",
-              "start": 69.474,
-              "end": 69.602
-            },
-            {
-              "word": "nagawa",
-              "start": 69.636,
-              "end": 70.124
-            },
-            {
-              "word": "kundi",
-              "start": 70.449,
-              "end": 70.844
-            },
-            {
-              "word": "magpaubaya",
-              "start": 70.914,
-              "end": 71.808
-            },
-            {
-              "word": "sa",
-              "start": 72.133,
-              "end": 72.284
-            },
-            {
-              "word": "makamundong",
-              "start": 72.33,
-              "end": 72.945
-            },
-            {
-              "word": "pagnanasa.",
-              "start": 73.003,
-              "end": 73.967
-            },
-            {
-              "word": "Dinakma",
-              "start": 74.78,
-              "end": 75.267
-            },
-            {
-              "word": "niya",
-              "start": 75.325,
-              "end": 75.453
-            },
-            {
-              "word": "ang",
-              "start": 75.488,
-              "end": 75.569
-            },
-            {
-              "word": "pisngi",
-              "start": 75.627,
-              "end": 76.01
-            },
-            {
-              "word": "ng",
-              "start": 76.08,
-              "end": 76.184
-            },
-            {
-              "word": "aking",
-              "start": 76.242,
-              "end": 76.509
-            },
-            {
-              "word": "puwetan",
-              "start": 76.567,
-              "end": 77.136
-            },
-            {
-              "word": "upang",
-              "start": 77.415,
-              "end": 77.74
-            },
-            {
-              "word": "lalong",
-              "start": 77.833,
-              "end": 78.204
-            },
-            {
-              "word": "maging",
-              "start": 78.251,
-              "end": 78.564
-            },
-            {
-              "word": "madiin",
-              "start": 78.634,
-              "end": 79.168
-            },
-            {
-              "word": "at",
-              "start": 79.238,
-              "end": 79.365
-            },
-            {
-              "word": "malalim",
-              "start": 79.447,
-              "end": 79.911
-            },
-            {
-              "word": "ang",
-              "start": 79.969,
-              "end": 80.074
-            },
-            {
-              "word": "bawat",
-              "start": 80.143,
-              "end": 80.492
-            },
-            {
-              "word": "tatarak",
-              "start": 80.526,
-              "end": 81.037
-            },
-            {
-              "word": "ng",
-              "start": 81.118,
-              "end": 81.223
-            },
-            {
-              "word": "kanyang",
-              "start": 81.258,
-              "end": 81.56
-            },
-            {
-              "word": "kaselanan.",
-              "start": 81.583,
-              "end": 82.512
-            },
-            {
-              "word": "“Yessss…",
-              "start": 83.812,
-              "end": 85.321
-            },
-            {
-              "word": "yesss!!!",
-              "start": 86.018,
-              "end": 87.098
-            },
-            {
-              "word": "Ahhhh!!”",
-              "start": 88.398,
-              "end": 90.105
-            },
-            {
-              "word": "ang",
-              "start": 90.348,
-              "end": 90.488
-            },
-            {
-              "word": "kanyang",
-              "start": 90.534,
-              "end": 90.882
-            },
-            {
-              "word": "halinghing",
-              "start": 90.952,
-              "end": 91.544
-            },
-            {
-              "word": "habang",
-              "start": 91.869,
-              "end": 92.252
-            },
-            {
-              "word": "ang",
-              "start": 92.322,
-              "end": 92.415
-            },
-            {
-              "word": "matigas",
-              "start": 92.45,
-              "end": 92.868
-            },
-            {
-              "word": "niyang",
-              "start": 92.937,
-              "end": 93.1
-            },
-            {
-              "word": "sandata",
-              "start": 93.158,
-              "end": 93.797
-            },
-            {
-              "word": "ay",
-              "start": 94.04,
-              "end": 94.191
-            },
-            {
-              "word": "walang",
-              "start": 94.249,
-              "end": 94.493
-            },
-            {
-              "word": "humpay",
-              "start": 94.528,
-              "end": 94.911
-            },
-            {
-              "word": "sa",
-              "start": 94.981,
-              "end": 95.074
-            },
-            {
-              "word": "pag-hindot",
-              "start": 95.12,
-              "end": 95.631
-            },
-            {
-              "word": "sa",
-              "start": 95.677,
-              "end": 95.77
-            },
-            {
-              "word": "akin.",
-              "start": 95.828,
-              "end": 96.537
-            },
-            {
-              "word": "Parang",
-              "start": 97.233,
-              "end": 97.639
-            },
-            {
-              "word": "mapupunit",
-              "start": 97.698,
-              "end": 98.441
-            },
-            {
-              "word": "ang",
-              "start": 98.499,
-              "end": 98.591
-            },
-            {
-              "word": "aking",
-              "start": 98.684,
-              "end": 99.009
-            },
-            {
-              "word": "pagkababae",
-              "start": 99.067,
-              "end": 99.833
-            },
-            {
-              "word": "sa",
-              "start": 99.891,
-              "end": 99.973
-            },
-            {
-              "word": "pagkakabukaka",
-              "start": 100.031,
-              "end": 100.89
-            },
-            {
-              "word": "ng",
-              "start": 100.948,
-              "end": 101.064
-            },
-            {
-              "word": "aking",
-              "start": 101.134,
-              "end": 101.412
-            },
-            {
-              "word": "mga",
-              "start": 101.447,
-              "end": 101.633
-            },
-            {
-              "word": "hita,",
-              "start": 101.703,
-              "end": 102.446
-            },
-            {
-              "word": "mapagbigyan",
-              "start": 102.829,
-              "end": 103.421
-            },
-            {
-              "word": "lamang",
-              "start": 103.502,
-              "end": 103.85
-            },
-            {
-              "word": "ang",
-              "start": 103.908,
-              "end": 104.001
-            },
-            {
-              "word": "walang",
-              "start": 104.059,
-              "end": 104.292
-            },
-            {
-              "word": "pagod",
-              "start": 104.373,
-              "end": 104.768
-            },
-            {
-              "word": "na",
-              "start": 104.826,
-              "end": 104.907
-            },
-            {
-              "word": "pagkilos",
-              "start": 104.965,
-              "end": 105.58
-            },
-            {
-              "word": "ng",
-              "start": 105.662,
-              "end": 105.778
-            },
-            {
-              "word": "matikas",
-              "start": 105.812,
-              "end": 106.323
-            },
-            {
-              "word": "na",
-              "start": 106.405,
-              "end": 106.474
-            },
-            {
-              "word": "panauhin!",
-              "start": 106.521,
-              "end": 107.438
-            },
-            {
-              "word": "Mayamaya",
-              "start": 108.738,
-              "end": 109.307
-            },
-            {
-              "word": "ay",
-              "start": 109.353,
-              "end": 109.458
-            },
-            {
-              "word": "naramdaman",
-              "start": 109.504,
-              "end": 110.004
-            },
-            {
-              "word": "ko",
-              "start": 110.062,
-              "end": 110.189
-            },
-            {
-              "word": "ang",
-              "start": 110.247,
-              "end": 110.329
-            },
-            {
-              "word": "paghugot",
-              "start": 110.398,
-              "end": 111.002
-            },
-            {
-              "word": "ng",
-              "start": 111.06,
-              "end": 111.153
-            },
-            {
-              "word": "kanyang",
-              "start": 111.188,
-              "end": 111.501
-            },
-            {
-              "word": "tarugo",
-              "start": 111.559,
-              "end": 111.943
-            },
-            {
-              "word": "sa",
-              "start": 112.001,
-              "end": 112.093
-            },
-            {
-              "word": "aking",
-              "start": 112.14,
-              "end": 112.407
-            },
-            {
-              "word": "masikip",
-              "start": 112.453,
-              "end": 112.918
-            },
-            {
-              "word": "at",
-              "start": 112.999,
-              "end": 113.08
-            },
-            {
-              "word": "basang-basang",
-              "start": 113.138,
-              "end": 113.684
-            },
-            {
-              "word": "lagusan.",
-              "start": 113.73,
-              "end": 114.566
-            },
-            {
-              "word": "Ilang",
-              "start": 115.518,
-              "end": 115.809
-            },
-            {
-              "word": "segundo",
-              "start": 115.867,
-              "end": 116.319
-            },
-            {
-              "word": "ang",
-              "start": 116.366,
-              "end": 116.447
-            },
-            {
-              "word": "lumipas",
-              "start": 116.494,
-              "end": 116.935
-            },
-            {
-              "word": "bago",
-              "start": 117.028,
-              "end": 117.307
-            },
-            {
-              "word": "niya",
-              "start": 117.353,
-              "end": 117.457
-            },
-            {
-              "word": "ito",
-              "start": 117.504,
-              "end": 117.713
-            },
-            {
-              "word": "biglang",
-              "start": 117.794,
-              "end": 118.131
-            },
-            {
-              "word": "ipinasok",
-              "start": 118.2,
-              "end": 118.816
-            },
-            {
-              "word": "nang",
-              "start": 118.874,
-              "end": 118.99
-            },
-            {
-              "word": "pailalim",
-              "start": 119.048,
-              "end": 119.652
-            },
-            {
-              "word": "at",
-              "start": 119.71,
-              "end": 119.791
-            },
-            {
-              "word": "baong-baon!",
-              "start": 119.872,
-              "end": 120.801
-            },
-            {
-              "word": "Halos",
-              "start": 121.126,
-              "end": 121.475
-            },
-            {
-              "word": "magiba",
-              "start": 121.556,
-              "end": 122.02
-            },
-            {
-              "word": "ang",
-              "start": 122.078,
-              "end": 122.183
-            },
-            {
-              "word": "aming",
-              "start": 122.252,
-              "end": 122.519
-            },
-            {
-              "word": "mga",
-              "start": 122.566,
-              "end": 122.728
-            },
-            {
-              "word": "balakang",
-              "start": 122.798,
-              "end": 123.32
-            },
-            {
-              "word": "sa",
-              "start": 123.402,
-              "end": 123.506
-            },
-            {
-              "word": "tindi",
-              "start": 123.576,
-              "end": 123.924
-            },
-            {
-              "word": "ng",
-              "start": 123.994,
-              "end": 124.133
-            },
-            {
-              "word": "salpukan.",
-              "start": 124.191,
-              "end": 125.085
-            },
-            {
-              "word": "Dahan-dahan,",
-              "start": 125.468,
-              "end": 126.618
-            },
-            {
-              "word": "unti-unti—hugot-baon,",
-              "start": 126.769,
-              "end": 129.671
-            },
-            {
-              "word": "hugot-baon",
-              "start": 129.822,
-              "end": 130.96
-            },
-            {
-              "word": "ang",
-              "start": 131.03,
-              "end": 131.122
-            },
-            {
-              "word": "ginagawa",
-              "start": 131.157,
-              "end": 131.738
-            },
-            {
-              "word": "niya",
-              "start": 131.796,
-              "end": 132.016
-            },
-            {
-              "word": "sa",
-              "start": 132.225,
-              "end": 132.399
-            },
-            {
-              "word": "aking",
-              "start": 132.469,
-              "end": 132.783
-            },
-            {
-              "word": "walang",
-              "start": 132.841,
-              "end": 133.131
-            },
-            {
-              "word": "kalaban-labang",
-              "start": 133.189,
-              "end": 134.257
-            },
-            {
-              "word": "hiyas.",
-              "start": 134.315,
-              "end": 134.965
-            },
-            {
-              "word": "“Diyos",
-              "start": 135.29,
-              "end": 135.65
-            },
-            {
-              "word": "ko…",
-              "start": 135.766,
-              "end": 136.347
-            },
-            {
-              "word": "Diyos",
-              "start": 136.591,
-              "end": 136.858
-            },
-            {
-              "word": "ko!",
-              "start": 136.974,
-              "end": 137.38
-            },
-            {
-              "word": "Hindi",
-              "start": 137.705,
-              "end": 138.053
-            },
-            {
-              "word": "dapat",
-              "start": 138.146,
-              "end": 138.634
-            },
-            {
-              "word": "mangyari",
-              "start": 138.727,
-              "end": 139.33
-            },
-            {
-              "word": "ito!”",
-              "start": 139.365,
-              "end": 139.946
-            },
-            {
-              "word": "paulit-ulit",
-              "start": 141.06,
-              "end": 141.885
-            },
-            {
-              "word": "kong",
-              "start": 141.943,
-              "end": 142.105
-            },
-            {
-              "word": "sambit",
-              "start": 142.163,
-              "end": 142.628
-            },
-            {
-              "word": "habang",
-              "start": 142.953,
-              "end": 143.324
-            },
-            {
-              "word": "nararamdamang",
-              "start": 143.359,
-              "end": 144.102
-            },
-            {
-              "word": "nawawala",
-              "start": 144.16,
-              "end": 144.752
-            },
-            {
-              "word": "na",
-              "start": 144.822,
-              "end": 144.915
-            },
-            {
-              "word": "ako",
-              "start": 144.973,
-              "end": 145.182
-            },
-            {
-              "word": "sa",
-              "start": 145.251,
-              "end": 145.356
-            },
-            {
-              "word": "katinuan.",
-              "start": 145.402,
-              "end": 146.192
-            },
-            {
-              "word": "Tuluyan",
-              "start": 146.796,
-              "end": 147.341
-            },
-            {
-              "word": "na",
-              "start": 147.365,
-              "end": 147.457
-            },
-            {
-              "word": "akong",
-              "start": 147.481,
-              "end": 147.736
-            },
-            {
-              "word": "bumigay",
-              "start": 147.771,
-              "end": 148.386
-            },
-            {
-              "word": "sa",
-              "start": 148.63,
-              "end": 148.769
-            },
-            {
-              "word": "mapanghimasok",
-              "start": 148.816,
-              "end": 149.686
-            },
-            {
-              "word": "na",
-              "start": 149.721,
-              "end": 149.791
-            },
-            {
-              "word": "sandata",
-              "start": 149.837,
-              "end": 150.476
-            },
-            {
-              "word": "na",
-              "start": 150.72,
-              "end": 150.847
-            },
-            {
-              "word": "buong-buong",
-              "start": 150.894,
-              "end": 151.44
-            },
-            {
-              "word": "bumabaon",
-              "start": 151.474,
-              "end": 152.148
-            },
-            {
-              "word": "sa",
-              "start": 152.392,
-              "end": 152.519
-            },
-            {
-              "word": "kailaliman",
-              "start": 152.577,
-              "end": 153.169
-            },
-            {
-              "word": "ng",
-              "start": 153.204,
-              "end": 153.32
-            },
-            {
-              "word": "aking",
-              "start": 153.413,
-              "end": 153.75
+              "start": 16.266,
+              "end": 16.498
             },
             {
               "word": "nanginginig",
-              "start": 153.785,
-              "end": 154.412
+              "start": 16.533,
+              "end": 17.23
             },
             {
               "word": "na",
-              "start": 154.493,
-              "end": 154.563
+              "start": 17.276,
+              "end": 17.357
             },
             {
-              "word": "hiyas.",
-              "start": 154.621,
-              "end": 155.294
+              "word": "katawan,",
+              "start": 17.404,
+              "end": 18.251
             },
             {
-              "word": "Pakiramdam",
-              "start": 155.991,
-              "end": 156.618
+              "word": "na",
+              "start": 18.53,
+              "end": 18.611
             },
             {
-              "word": "ko",
-              "start": 156.699,
-              "end": 156.954
+              "word": "sinabayan",
+              "start": 18.669,
+              "end": 19.25
             },
             {
-              "word": "ay",
-              "start": 157.279,
-              "end": 157.43
+              "word": "na",
+              "start": 19.285,
+              "end": 19.366
             },
             {
-              "word": "tila",
-              "start": 157.5,
-              "end": 157.767
-            },
-            {
-              "word": "gustong",
-              "start": 157.813,
-              "end": 158.173
-            },
-            {
-              "word": "higupin",
-              "start": 158.231,
-              "end": 158.847
+              "word": "rin",
+              "start": 19.424,
+              "end": 19.575
             },
             {
               "word": "ng",
-              "start": 159.125,
-              "end": 159.276
+              "start": 19.598,
+              "end": 19.691
+            },
+            {
+              "word": "paghigpít",
+              "start": 19.737,
+              "end": 20.318
+            },
+            {
+              "word": "ng",
+              "start": 20.364,
+              "end": 20.492
             },
             {
               "word": "aking",
-              "start": 159.357,
-              "end": 159.717
+              "start": 20.562,
+              "end": 20.805
             },
             {
-              "word": "laman",
-              "start": 159.775,
-              "end": 160.193
-            },
-            {
-              "word": "at",
-              "start": 160.437,
-              "end": 160.634
-            },
-            {
-              "word": "ayaw",
-              "start": 160.785,
-              "end": 161.134
-            },
-            {
-              "word": "nang",
-              "start": 161.203,
-              "end": 161.343
-            },
-            {
-              "word": "pakawalan",
-              "start": 161.401,
-              "end": 161.958
-            },
-            {
-              "word": "ang",
-              "start": 162.004,
-              "end": 162.074
-            },
-            {
-              "word": "kanyang",
-              "start": 162.109,
-              "end": 162.388
-            },
-            {
-              "word": "utin",
-              "start": 162.48,
-              "end": 162.864
-            },
-            {
-              "word": "tuwing",
-              "start": 163.073,
-              "end": 163.421
-            },
-            {
-              "word": "ito",
-              "start": 163.514,
-              "end": 163.92
+              "word": "kaselanan,",
+              "start": 20.829,
+              "end": 21.548
             },
             {
               "word": "ay",
-              "start": 164.013,
-              "end": 164.141
+              "start": 21.572,
+              "end": 21.781
             },
             {
-              "word": "dahan-dahang",
-              "start": 164.234,
-              "end": 165.325
-            },
-            {
-              "word": "huhugutin.",
-              "start": 165.395,
-              "end": 166.381
-            },
-            {
-              "word": "Napapasama",
-              "start": 166.892,
-              "end": 167.6
+              "word": "napapasunod",
+              "start": 22.106,
+              "end": 22.884
             },
             {
               "word": "na",
-              "start": 167.659,
-              "end": 167.798
-            },
-            {
-              "word": "ang",
-              "start": 167.833,
-              "end": 167.926
-            },
-            {
-              "word": "aking",
-              "start": 168.007,
-              "end": 168.309
-            },
-            {
-              "word": "balakang",
-              "start": 168.355,
-              "end": 168.785
+              "start": 22.942,
+              "end": 23.035
             },
             {
               "word": "sa",
-              "start": 168.854,
-              "end": 168.959
+              "start": 23.104,
+              "end": 23.209
             },
             {
               "word": "bawat",
-              "start": 169.017,
-              "end": 169.319
+              "start": 23.267,
+              "end": 23.58
             },
             {
-              "word": "pag-angat,",
-              "start": 169.377,
-              "end": 170.131
+              "word": "galáw",
+              "start": 23.65,
+              "end": 23.929
             },
             {
-              "word": "at",
-              "start": 170.306,
-              "end": 170.468
+              "word": "niya.",
+              "start": 23.987,
+              "end": 24.381
             },
             {
-              "word": "napapagiling",
-              "start": 170.526,
-              "end": 171.281
+              "word": "Ipinulupot",
+              "start": 24.892,
+              "end": 25.635
             },
             {
-              "word": "naman",
-              "start": 171.327,
-              "end": 171.606
-            },
-            {
-              "word": "sa",
-              "start": 171.676,
-              "end": 171.768
-            },
-            {
-              "word": "tuwing",
-              "start": 171.838,
-              "end": 172.035
-            },
-            {
-              "word": "ito",
-              "start": 172.094,
-              "end": 172.477
-            },
-            {
-              "word": "ay",
-              "start": 172.593,
-              "end": 172.72
-            },
-            {
-              "word": "kanyang",
-              "start": 172.79,
-              "end": 173.243
-            },
-            {
-              "word": "uulusin.",
-              "start": 173.359,
-              "end": 174.253
-            },
-            {
-              "word": "“AAAggggghhhhh…",
-              "start": 174.427,
-              "end": 176.331
-            },
-            {
-              "word": "Oh…",
-              "start": 177.446,
-              "end": 178.015
-            },
-            {
-              "word": "ohhh…",
-              "start": 178.398,
-              "end": 179.187
-            },
-            {
-              "word": "ohhhhhh…",
-              "start": 180.139,
-              "end": 181.045
-            },
-            {
-              "word": "ahhhhh,",
-              "start": 182.16,
-              "end": 183.297
-            },
-            {
-              "word": "Diyos",
-              "start": 183.332,
-              "end": 183.704
-            },
-            {
-              "word": "ko!",
-              "start": 183.82,
-              "end": 184.4
-            },
-            {
-              "word": "Hindi!”",
-              "start": 184.783,
-              "end": 186.13
+              "word": "ko",
+              "start": 25.693,
+              "end": 25.856
             },
             {
               "word": "ang",
-              "start": 187.245,
-              "end": 187.384
+              "start": 25.902,
+              "end": 25.984
             },
             {
               "word": "aking",
-              "start": 187.465,
-              "end": 187.779
-            },
-            {
-              "word": "daing",
-              "start": 187.848,
-              "end": 188.15
-            },
-            {
-              "word": "habang",
-              "start": 188.22,
-              "end": 188.545
-            },
-            {
-              "word": "unti-unti",
-              "start": 188.603,
-              "end": 189.23
-            },
-            {
-              "word": "na",
-              "start": 189.3,
-              "end": 189.358
-            },
-            {
-              "word": "namang",
-              "start": 189.404,
-              "end": 189.671
-            },
-            {
-              "word": "tumitirik",
-              "start": 189.729,
-              "end": 190.298
-            },
-            {
-              "word": "ang",
-              "start": 190.368,
-              "end": 190.461
-            },
-            {
-              "word": "aking",
-              "start": 190.577,
-              "end": 190.937
+              "start": 26.065,
+              "end": 26.378
             },
             {
               "word": "mga",
-              "start": 190.972,
-              "end": 191.169
+              "start": 26.425,
+              "end": 26.645
             },
             {
-              "word": "mata.",
-              "start": 191.215,
-              "end": 191.761
-            },
-            {
-              "word": "May",
-              "start": 192.574,
-              "end": 192.736
-            },
-            {
-              "word": "namumuo",
-              "start": 192.794,
-              "end": 193.259
-            },
-            {
-              "word": "na",
-              "start": 193.328,
-              "end": 193.386
-            },
-            {
-              "word": "namang",
-              "start": 193.421,
-              "end": 193.677
-            },
-            {
-              "word": "sarap",
-              "start": 193.746,
-              "end": 194.071
-            },
-            {
-              "word": "na",
-              "start": 194.129,
-              "end": 194.188
-            },
-            {
-              "word": "gustong",
-              "start": 194.234,
-              "end": 194.559
-            },
-            {
-              "word": "kumawala",
-              "start": 194.594,
-              "end": 195.105
-            },
-            {
-              "word": "mula",
-              "start": 195.163,
-              "end": 195.395
+              "word": "hita",
+              "start": 26.715,
+              "end": 27.121
             },
             {
               "word": "sa",
-              "start": 195.453,
-              "end": 195.546
-            },
-            {
-              "word": "aking",
-              "start": 195.616,
-              "end": 195.906
-            },
-            {
-              "word": "sinapupunan",
-              "start": 195.952,
-              "end": 196.765
-            },
-            {
-              "word": "habang",
-              "start": 197.369,
-              "end": 197.694
-            },
-            {
-              "word": "ibinabaon",
-              "start": 197.752,
-              "end": 198.414
-            },
-            {
-              "word": "niya",
-              "start": 198.448,
-              "end": 198.611
-            },
-            {
-              "word": "nang",
-              "start": 198.669,
-              "end": 198.797
-            },
-            {
-              "word": "pailalim",
-              "start": 198.843,
-              "end": 199.366
-            },
-            {
-              "word": "ang",
-              "start": 199.424,
-              "end": 199.493
+              "start": 27.214,
+              "end": 27.33
             },
             {
               "word": "kanyang",
-              "start": 199.54,
-              "end": 199.842
+              "start": 27.377,
+              "end": 27.655
             },
             {
-              "word": "utin",
-              "start": 199.911,
-              "end": 200.248
+              "word": "likuran",
+              "start": 27.702,
+              "end": 28.282
             },
             {
-              "word": "sa",
-              "start": 200.318,
-              "end": 200.41
+              "word": "at",
+              "start": 28.665,
+              "end": 28.863
             },
             {
-              "word": "bukang-buka",
-              "start": 200.456,
-              "end": 201.002
+              "word": "hinatak",
+              "start": 28.921,
+              "end": 29.466
+            },
+            {
+              "word": "ang",
+              "start": 29.525,
+              "end": 29.606
+            },
+            {
+              "word": "kanyang",
+              "start": 29.652,
+              "end": 29.977
+            },
+            {
+              "word": "likód",
+              "start": 30.024,
+              "end": 30.523
+            },
+            {
+              "word": "upang",
+              "start": 30.848,
+              "end": 31.173
+            },
+            {
+              "word": "mas",
+              "start": 31.219,
+              "end": 31.359
+            },
+            {
+              "word": "maging",
+              "start": 31.44,
+              "end": 31.719
+            },
+            {
+              "word": "madiín",
+              "start": 31.765,
+              "end": 32.276
+            },
+            {
+              "word": "ang",
+              "start": 32.357,
+              "end": 32.485
+            },
+            {
+              "word": "aming",
+              "start": 32.555,
+              "end": 32.891
+            },
+            {
+              "word": "pagkakadikit.",
+              "start": 33.007,
+              "end": 34.064
+            },
+            {
+              "word": "Napangisi",
+              "start": 34.238,
+              "end": 34.795
+            },
+            {
+              "word": "ang",
+              "start": 34.842,
+              "end": 34.911
+            },
+            {
+              "word": "matanda",
+              "start": 34.946,
+              "end": 35.364
+            },
+            {
+              "word": "nang",
+              "start": 35.422,
+              "end": 35.55
+            },
+            {
+              "word": "maramdaman",
+              "start": 35.585,
+              "end": 36.293
+            },
+            {
+              "word": "ang",
+              "start": 36.618,
+              "end": 36.781
+            },
+            {
+              "word": "nagtutumigás",
+              "start": 36.839,
+              "end": 37.57
             },
             {
               "word": "kong",
-              "start": 201.06,
-              "end": 201.234
+              "start": 37.651,
+              "end": 37.814
             },
             {
-              "word": "hiyas.",
-              "start": 201.281,
-              "end": 201.885
+              "word": "mga",
+              "start": 37.837,
+              "end": 38.058
             },
             {
-              "word": "Iginigiling",
-              "start": 202.128,
-              "end": 202.813
+              "word": "utong",
+              "start": 38.116,
+              "end": 38.394
             },
             {
-              "word": "niya",
-              "start": 202.86,
-              "end": 202.976
+              "word": "na",
+              "start": 38.429,
+              "end": 38.511
             },
             {
-              "word": "ang",
-              "start": 203.011,
-              "end": 203.092
+              "word": "dumidiín",
+              "start": 38.569,
+              "end": 39.3
+            },
+            {
+              "word": "sa",
+              "start": 39.37,
+              "end": 39.497
             },
             {
               "word": "kanyang",
-              "start": 203.138,
-              "end": 203.429
+              "start": 39.532,
+              "end": 39.846
+            },
+            {
+              "word": "dibdib.",
+              "start": 39.904,
+              "end": 40.496
+            },
+            {
+              "word": "“Ang",
+              "start": 40.74,
+              "end": 41.053
+            },
+            {
+              "word": "lambot",
+              "start": 41.123,
+              "end": 41.448
+            },
+            {
+              "word": "ng",
+              "start": 41.506,
+              "end": 41.587
+            },
+            {
+              "word": "mga",
+              "start": 41.61,
+              "end": 41.773
+            },
+            {
+              "word": "suso",
+              "start": 41.854,
+              "end": 42.203
+            },
+            {
+              "word": "mo,",
+              "start": 42.261,
+              "end": 42.504
+            },
+            {
+              "word": "ang",
+              "start": 42.551,
+              "end": 42.69
+            },
+            {
+              "word": "saráp",
+              "start": 42.76,
+              "end": 43.085
+            },
+            {
+              "word": "lamasín!",
+              "start": 43.155,
+              "end": 43.851
+            },
+            {
+              "word": "At",
+              "start": 44.13,
+              "end": 44.292
+            },
+            {
+              "word": "ang",
+              "start": 44.35,
+              "end": 44.432
+            },
+            {
+              "word": "mga",
+              "start": 44.49,
+              "end": 44.675
+            },
+            {
+              "word": "malarosas",
+              "start": 44.722,
+              "end": 45.326
+            },
+            {
+              "word": "mong",
+              "start": 45.395,
+              "end": 45.569
+            },
+            {
+              "word": "utong,",
+              "start": 45.639,
+              "end": 46.231
+            },
+            {
+              "word": "ang",
+              "start": 46.475,
+              "end": 46.661
+            },
+            {
+              "word": "saráp",
+              "start": 46.73,
+              "end": 47.114
+            },
+            {
+              "word": "sipsipín!”",
+              "start": 47.23,
+              "end": 48.275
+            },
+            {
+              "word": "bulong",
+              "start": 48.6,
+              "end": 48.936
+            },
+            {
+              "word": "niya",
+              "start": 48.994,
+              "end": 49.18
+            },
+            {
+              "word": "sa",
+              "start": 49.25,
+              "end": 49.354
+            },
+            {
+              "word": "gitna",
+              "start": 49.401,
+              "end": 49.679
+            },
+            {
+              "word": "ng",
+              "start": 49.737,
+              "end": 49.854
+            },
+            {
+              "word": "init",
+              "start": 49.935,
+              "end": 50.202
+            },
+            {
+              "word": "ng",
+              "start": 50.26,
+              "end": 50.341
+            },
+            {
+              "word": "katawan.",
+              "start": 50.376,
+              "end": 51.107
+            },
+            {
+              "word": "Ako’y",
+              "start": 51.282,
+              "end": 51.583
+            },
+            {
+              "word": "dumadaing",
+              "start": 51.63,
+              "end": 52.187
+            },
+            {
+              "word": "na",
+              "start": 52.245,
+              "end": 52.408
+            },
+            {
+              "word": "at",
+              "start": 52.454,
+              "end": 52.57
+            },
+            {
+              "word": "umuungol.",
+              "start": 52.652,
+              "end": 53.557
+            },
+            {
+              "word": "Hindi",
+              "start": 53.882,
+              "end": 54.114
+            },
+            {
+              "word": "na",
+              "start": 54.172,
+              "end": 54.254
+            },
+            {
+              "word": "ako",
+              "start": 54.277,
+              "end": 54.416
+            },
+            {
+              "word": "napapaiyak,",
+              "start": 54.474,
+              "end": 55.484
+            },
+            {
+              "word": "kundi",
+              "start": 55.565,
+              "end": 56.03
+            },
+            {
+              "word": "napapasigáw",
+              "start": 56.239,
+              "end": 57.063
+            },
+            {
+              "word": "na",
+              "start": 57.098,
+              "end": 57.167
+            },
+            {
+              "word": "sa",
+              "start": 57.214,
+              "end": 57.295
+            },
+            {
+              "word": "saráp!",
+              "start": 57.353,
+              "end": 58.027
+            },
+            {
+              "word": "“Yes!",
+              "start": 58.305,
+              "end": 58.99
+            },
+            {
+              "word": "Sige",
+              "start": 59.106,
+              "end": 59.373
+            },
+            {
+              "word": "pa!",
+              "start": 59.489,
+              "end": 59.803
+            },
+            {
+              "word": "Idiín",
+              "start": 59.849,
+              "end": 60.36
+            },
+            {
+              "word": "mo!”",
+              "start": 60.441,
+              "end": 60.917
+            },
+            {
+              "word": "hiyáw",
+              "start": 60.987,
+              "end": 61.254
+            },
+            {
+              "word": "ko.",
+              "start": 61.335,
+              "end": 61.626
+            },
+            {
+              "word": "“Bayuhín",
+              "start": 61.753,
+              "end": 62.369
+            },
+            {
+              "word": "mo",
+              "start": 62.415,
+              "end": 62.531
+            },
+            {
+              "word": "pa",
+              "start": 62.601,
+              "end": 62.74
+            },
+            {
+              "word": "ang",
+              "start": 62.775,
+              "end": 62.88
+            },
+            {
+              "word": "hiyas",
+              "start": 62.961,
+              "end": 63.321
+            },
+            {
+              "word": "ko!",
+              "start": 63.437,
+              "end": 63.843
+            },
+            {
+              "word": "Bilísan",
+              "start": 64.052,
+              "end": 64.795
+            },
+            {
+              "word": "mo!",
+              "start": 64.876,
+              "end": 65.271
+            },
+            {
+              "word": "Gusto",
+              "start": 65.387,
+              "end": 65.84
+            },
+            {
+              "word": "ko",
+              "start": 65.921,
+              "end": 66.049
+            },
+            {
+              "word": "’yan!”",
+              "start": 66.084,
+              "end": 66.618
+            },
+            {
+              "word": "Lalo",
+              "start": 67.315,
+              "end": 67.558
+            },
+            {
+              "word": "pang",
+              "start": 67.605,
+              "end": 67.779
+            },
+            {
+              "word": "bumilís",
+              "start": 67.814,
+              "end": 68.359
+            },
+            {
+              "word": "ang",
+              "start": 68.417,
+              "end": 68.487
+            },
+            {
+              "word": "kanyang",
+              "start": 68.51,
+              "end": 68.789
+            },
+            {
+              "word": "paggaláw—mabilís,",
+              "start": 68.824,
+              "end": 70.867
+            },
+            {
+              "word": "mahaba,",
+              "start": 70.948,
+              "end": 71.889
+            },
+            {
+              "word": "at",
+              "start": 72.017,
+              "end": 72.167
+            },
+            {
+              "word": "pailalim.",
+              "start": 72.214,
+              "end": 73.061
+            },
+            {
+              "word": "Tila",
+              "start": 73.572,
+              "end": 73.874
+            },
+            {
+              "word": "tumutunóg",
+              "start": 73.932,
+              "end": 74.582
+            },
+            {
+              "word": "ang",
+              "start": 74.617,
+              "end": 74.687
+            },
+            {
+              "word": "aming",
+              "start": 74.745,
+              "end": 75.047
+            },
+            {
+              "word": "mga",
+              "start": 75.093,
+              "end": 75.291
             },
             {
               "word": "balakang",
-              "start": 203.475,
-              "end": 203.87
+              "start": 75.349,
+              "end": 75.755
             },
             {
               "word": "sa",
-              "start": 203.928,
-              "end": 204.009
+              "start": 75.801,
+              "end": 75.883
             },
             {
-              "word": "bawat",
-              "start": 204.067,
-              "end": 204.346
+              "word": "lakás",
+              "start": 75.941,
+              "end": 76.243
             },
             {
-              "word": "pagbaon",
-              "start": 204.404,
-              "end": 204.903
+              "word": "ng",
+              "start": 76.301,
+              "end": 76.44
+            },
+            {
+              "word": "salpukan.",
+              "start": 76.498,
+              "end": 77.416
+            },
+            {
+              "word": "Pati",
+              "start": 77.624,
+              "end": 77.892
+            },
+            {
+              "word": "ang",
+              "start": 77.95,
+              "end": 78.031
+            },
+            {
+              "word": "katas",
+              "start": 78.066,
+              "end": 78.588
+            },
+            {
+              "word": "na",
+              "start": 78.913,
+              "end": 79.029
+            },
+            {
+              "word": "lumalabas",
+              "start": 79.064,
+              "end": 79.563
             },
             {
               "word": "sa",
-              "start": 204.973,
-              "end": 205.066
+              "start": 79.587,
+              "end": 79.714
+            },
+            {
+              "word": "akin",
+              "start": 79.784,
+              "end": 80.086
+            },
+            {
+              "word": "ay",
+              "start": 80.167,
+              "end": 80.399
+            },
+            {
+              "word": "nagkakaroon",
+              "start": 80.84,
+              "end": 81.467
+            },
+            {
+              "word": "na",
+              "start": 81.491,
+              "end": 81.56
+            },
+            {
+              "word": "rin",
+              "start": 81.607,
+              "end": 81.734
+            },
+            {
+              "word": "ng",
+              "start": 81.758,
+              "end": 81.862
+            },
+            {
+              "word": "tunóg",
+              "start": 81.909,
+              "end": 82.245
+            },
+            {
+              "word": "dahil",
+              "start": 82.303,
+              "end": 82.547
+            },
+            {
+              "word": "sa",
+              "start": 82.605,
+              "end": 82.733
+            },
+            {
+              "word": "walang",
+              "start": 82.791,
+              "end": 83.07
+            },
+            {
+              "word": "habas",
+              "start": 83.151,
+              "end": 83.697
+            },
+            {
+              "word": "na",
+              "start": 84.022,
+              "end": 84.173
+            },
+            {
+              "word": "pagkikiskisan.",
+              "start": 84.242,
+              "end": 85.461
+            },
+            {
+              "word": "Habang",
+              "start": 85.67,
+              "end": 86.1
+            },
+            {
+              "word": "ginagawa",
+              "start": 86.251,
+              "end": 86.796
+            },
+            {
+              "word": "ito",
+              "start": 86.843,
+              "end": 87.017
+            },
+            {
+              "word": "ni",
+              "start": 87.075,
+              "end": 87.145
+            },
+            {
+              "word": "Mr.",
+              "start": 87.18,
+              "end": 87.493
+            },
+            {
+              "word": "Sy,",
+              "start": 87.516,
+              "end": 88.015
+            },
+            {
+              "word": "hindi",
+              "start": 88.259,
+              "end": 88.538
+            },
+            {
+              "word": "na",
+              "start": 88.596,
+              "end": 88.654
+            },
+            {
+              "word": "rin",
+              "start": 88.712,
+              "end": 88.84
+            },
+            {
+              "word": "niya",
+              "start": 88.863,
+              "end": 88.991
+            },
+            {
+              "word": "maiwasang",
+              "start": 89.049,
+              "end": 89.629
+            },
+            {
+              "word": "humiyáw",
+              "start": 89.699,
+              "end": 90.233
+            },
+            {
+              "word": "sa",
+              "start": 90.291,
+              "end": 90.384
+            },
+            {
+              "word": "saráp.",
+              "start": 90.442,
+              "end": 91.069
+            },
+            {
+              "word": "Halos",
+              "start": 91.347,
+              "end": 91.661
+            },
+            {
+              "word": "mapipî",
+              "start": 91.742,
+              "end": 92.265
+            },
+            {
+              "word": "ang",
+              "start": 92.323,
+              "end": 92.427
             },
             {
               "word": "aking",
-              "start": 205.1,
-              "end": 205.356
+              "start": 92.474,
+              "end": 92.857
             },
             {
-              "word": "kaselanang",
-              "start": 205.379,
-              "end": 205.902
+              "word": "pagkababae",
+              "start": 93.031,
+              "end": 93.855
             },
             {
-              "word": "lubusan",
-              "start": 205.948,
-              "end": 206.459
+              "word": "sa",
+              "start": 93.913,
+              "end": 94.029
+            },
+            {
+              "word": "mga",
+              "start": 94.076,
+              "end": 94.262
+            },
+            {
+              "word": "sandaling",
+              "start": 94.331,
+              "end": 94.773
+            },
+            {
+              "word": "iyon!",
+              "start": 94.842,
+              "end": 95.411
+            },
+            {
+              "word": "Sa",
+              "start": 95.922,
+              "end": 96.061
+            },
+            {
+              "word": "gitna",
+              "start": 96.096,
+              "end": 96.375
+            },
+            {
+              "word": "ng",
+              "start": 96.433,
+              "end": 96.514
+            },
+            {
+              "word": "tiimbagang",
+              "start": 96.572,
+              "end": 97.188
+            },
+            {
+              "word": "na",
+              "start": 97.234,
+              "end": 97.292
+            },
+            {
+              "word": "pakiramdam,",
+              "start": 97.35,
+              "end": 98.36
+            },
+            {
+              "word": "naramdaman",
+              "start": 98.685,
+              "end": 99.231
+            },
+            {
+              "word": "ko",
+              "start": 99.312,
+              "end": 99.486
+            },
+            {
+              "word": "ang",
+              "start": 99.556,
+              "end": 99.649
+            },
+            {
+              "word": "pagdaloy",
+              "start": 99.719,
+              "end": 100.322
+            },
+            {
+              "word": "ng",
+              "start": 100.369,
+              "end": 100.508
+            },
+            {
+              "word": "likido",
+              "start": 100.554,
+              "end": 101.007
+            },
+            {
+              "word": "ng",
+              "start": 101.054,
+              "end": 101.193
+            },
+            {
+              "word": "saráp",
+              "start": 101.251,
+              "end": 101.75
+            },
+            {
+              "word": "mula",
+              "start": 102.075,
+              "end": 102.366
+            },
+            {
+              "word": "sa",
+              "start": 102.435,
+              "end": 102.551
+            },
+            {
+              "word": "aking",
+              "start": 102.621,
+              "end": 102.981
+            },
+            {
+              "word": "sinapupunan.",
+              "start": 103.039,
+              "end": 104.154
+            },
+            {
+              "word": "“Malapit",
+              "start": 104.432,
+              "end": 104.931
+            },
+            {
+              "word": "na",
+              "start": 104.978,
+              "end": 105.094
+            },
+            {
+              "word": "ako!",
+              "start": 105.117,
+              "end": 105.686
+            },
+            {
+              "word": "Malapit",
+              "start": 105.837,
+              "end": 106.336
+            },
+            {
+              "word": "na",
+              "start": 106.406,
+              "end": 106.568
+            },
+            {
+              "word": "ako!”",
+              "start": 106.592,
+              "end": 107.369
+            },
+            {
+              "word": "sigáw",
+              "start": 107.811,
+              "end": 108.205
+            },
+            {
+              "word": "ko",
+              "start": 108.252,
+              "end": 108.461
+            },
+            {
+              "word": "habang",
+              "start": 108.519,
+              "end": 108.821
+            },
+            {
+              "word": "sinasalubong",
+              "start": 108.867,
+              "end": 109.738
+            },
+            {
+              "word": "ang",
+              "start": 109.982,
+              "end": 110.156
+            },
+            {
+              "word": "bawat",
+              "start": 110.214,
+              "end": 110.562
+            },
+            {
+              "word": "bayó",
+              "start": 110.632,
+              "end": 110.887
+            },
+            {
+              "word": "niya.",
+              "start": 110.969,
+              "end": 111.421
+            },
+            {
+              "word": "Pinilit",
+              "start": 111.863,
+              "end": 112.327
+            },
+            {
+              "word": "kong",
+              "start": 112.373,
+              "end": 112.536
+            },
+            {
+              "word": "pigain",
+              "start": 112.594,
+              "end": 113.024
+            },
+            {
+              "word": "ang",
+              "start": 113.07,
+              "end": 113.14
+            },
+            {
+              "word": "kanyang",
+              "start": 113.186,
+              "end": 113.476
+            },
+            {
+              "word": "pagkalalaki",
+              "start": 113.534,
+              "end": 114.277
+            },
+            {
+              "word": "gamit",
+              "start": 114.347,
+              "end": 114.684
+            },
+            {
+              "word": "ang",
+              "start": 114.742,
+              "end": 114.811
+            },
+            {
+              "word": "aking",
+              "start": 114.869,
+              "end": 115.194
+            },
+            {
+              "word": "muscle",
+              "start": 115.264,
+              "end": 115.624
+            },
+            {
+              "word": "control.",
+              "start": 115.671,
+              "end": 116.518
+            },
+            {
+              "word": "Naramdaman",
+              "start": 116.959,
+              "end": 117.528
+            },
+            {
+              "word": "ko",
+              "start": 117.598,
+              "end": 117.702
+            },
+            {
+              "word": "ang",
+              "start": 117.737,
+              "end": 117.807
+            },
+            {
+              "word": "mainit-init",
+              "start": 117.853,
+              "end": 118.863
+            },
+            {
+              "word": "na",
+              "start": 118.956,
+              "end": 119.165
+            },
+            {
+              "word": "likidong",
+              "start": 119.258,
+              "end": 119.838
+            },
+            {
+              "word": "dumilíg",
+              "start": 119.897,
+              "end": 120.407
+            },
+            {
+              "word": "sa",
+              "start": 120.465,
+              "end": 120.57
+            },
+            {
+              "word": "aking",
+              "start": 120.616,
+              "end": 120.918
+            },
+            {
+              "word": "kaloob-looban,",
+              "start": 120.941,
+              "end": 122.149
+            },
+            {
+              "word": "kasabay",
+              "start": 122.358,
+              "end": 122.985
+            },
+            {
+              "word": "ng",
+              "start": 123.054,
+              "end": 123.171
+            },
+            {
+              "word": "sarili",
+              "start": 123.229,
+              "end": 123.623
+            },
+            {
+              "word": "kong",
+              "start": 123.67,
+              "end": 123.821
+            },
+            {
+              "word": "katas",
+              "start": 123.856,
+              "end": 124.355
+            },
+            {
+              "word": "na",
+              "start": 124.68,
+              "end": 124.808
+            },
+            {
+              "word": "umágos",
+              "start": 124.877,
+              "end": 125.493
+            },
+            {
+              "word": "palabas.",
+              "start": 125.609,
+              "end": 126.549
+            },
+            {
+              "word": "Naghalo",
+              "start": 126.874,
+              "end": 127.513
+            },
+            {
+              "word": "ang",
+              "start": 127.594,
+              "end": 127.722
+            },
+            {
+              "word": "aming",
+              "start": 127.791,
+              "end": 128.14
+            },
+            {
+              "word": "mga",
+              "start": 128.256,
+              "end": 128.534
+            },
+            {
+              "word": "likido.",
+              "start": 128.592,
+              "end": 129.417
+            },
+            {
+              "word": "Nanginig",
+              "start": 129.695,
+              "end": 130.253
+            },
+            {
+              "word": "ang",
+              "start": 130.311,
+              "end": 130.404
+            },
+            {
+              "word": "aming",
+              "start": 130.473,
+              "end": 130.787
+            },
+            {
+              "word": "mga",
+              "start": 130.833,
+              "end": 131.054
+            },
+            {
+              "word": "kalamnan",
+              "start": 131.123,
+              "end": 131.948
+            },
+            {
+              "word": "at",
+              "start": 132.273,
+              "end": 132.47
+            },
+            {
+              "word": "napakisáy",
+              "start": 132.54,
+              "end": 133.387
+            },
+            {
+              "word": "sa",
+              "start": 133.538,
+              "end": 133.759
+            },
+            {
+              "word": "rurok",
+              "start": 133.933,
+              "end": 134.421
+            },
+            {
+              "word": "ng",
+              "start": 134.537,
+              "end": 134.653
+            },
+            {
+              "word": "saráp.",
+              "start": 134.711,
+              "end": 135.338
+            },
+            {
+              "word": "Nanghina",
+              "start": 135.663,
+              "end": 136.186
+            },
+            {
+              "word": "si",
+              "start": 136.279,
+              "end": 136.383
+            },
+            {
+              "word": "Mr.",
+              "start": 136.441,
+              "end": 136.789
+            },
+            {
+              "word": "Sy",
+              "start": 136.824,
+              "end": 137.103
+            },
+            {
+              "word": "at",
+              "start": 137.184,
+              "end": 137.381
+            },
+            {
+              "word": "dumagan",
+              "start": 137.985,
+              "end": 138.403
+            },
+            {
+              "word": "sa",
+              "start": 138.473,
+              "end": 138.577
+            },
+            {
+              "word": "akin",
+              "start": 138.635,
+              "end": 138.914
+            },
+            {
+              "word": "sa",
+              "start": 138.972,
+              "end": 139.053
+            },
+            {
+              "word": "sofa,",
+              "start": 139.111,
+              "end": 139.785
+            },
+            {
+              "word": "habang",
+              "start": 139.959,
+              "end": 140.284
+            },
+            {
+              "word": "ako",
+              "start": 140.33,
+              "end": 140.481
+            },
+            {
+              "word": "naman",
+              "start": 140.539,
+              "end": 140.795
+            },
+            {
+              "word": "ay",
+              "start": 140.818,
+              "end": 140.899
+            },
+            {
+              "word": "nakahiga",
+              "start": 140.934,
+              "end": 141.526
+            },
+            {
+              "word": "lang",
+              "start": 141.596,
+              "end": 141.851
+            },
+            {
+              "word": "at",
+              "start": 141.967,
+              "end": 142.165
+            },
+            {
+              "word": "nakabukakâ,",
+              "start": 142.49,
+              "end": 143.488
+            },
+            {
+              "word": "tila",
+              "start": 143.604,
+              "end": 143.918
+            },
+            {
+              "word": "nawalan",
+              "start": 143.976,
+              "end": 144.347
+            },
+            {
+              "word": "ng",
+              "start": 144.371,
+              "end": 144.487
+            },
+            {
+              "word": "lakás.",
+              "start": 144.533,
+              "end": 145.207
+            },
+            {
+              "word": "Ilang",
+              "start": 145.485,
+              "end": 145.787
+            },
+            {
+              "word": "minuto",
+              "start": 145.845,
+              "end": 146.263
+            },
+            {
+              "word": "ang",
+              "start": 146.31,
+              "end": 146.379
+            },
+            {
+              "word": "lumipas",
+              "start": 146.437,
+              "end": 146.913
+            },
+            {
+              "word": "bago",
+              "start": 146.995,
+              "end": 147.25
+            },
+            {
+              "word": "kami",
+              "start": 147.296,
+              "end": 147.505
+            },
+            {
+              "word": "tumayô",
+              "start": 147.563,
+              "end": 147.97
+            },
+            {
+              "word": "at",
+              "start": 148.005,
+              "end": 148.086
+            },
+            {
+              "word": "nag-ayos",
+              "start": 148.132,
+              "end": 148.515
+            },
+            {
+              "word": "ng",
+              "start": 148.608,
+              "end": 148.748
+            },
+            {
+              "word": "sarili.",
+              "start": 148.806,
+              "end": 149.491
+            },
+            {
+              "word": "Tahimik",
+              "start": 149.816,
+              "end": 150.245
+            },
+            {
+              "word": "kaming",
+              "start": 150.269,
+              "end": 150.524
+            },
+            {
+              "word": "nagbihis,",
+              "start": 150.57,
+              "end": 151.383
+            },
+            {
+              "word": "walang",
+              "start": 151.534,
+              "end": 151.801
+            },
+            {
+              "word": "imikan.",
+              "start": 151.871,
+              "end": 152.695
+            },
+            {
+              "word": "Pagkatapos,",
+              "start": 153.078,
+              "end": 154.169
+            },
+            {
+              "word": "tinanong",
+              "start": 154.448,
+              "end": 154.924
+            },
+            {
+              "word": "niya",
+              "start": 154.971,
+              "end": 155.145
+            },
+            {
+              "word": "ako",
+              "start": 155.191,
+              "end": 155.621
+            },
+            {
+              "word": "kung",
+              "start": 155.946,
+              "end": 156.155
+            },
+            {
+              "word": "posibleng",
+              "start": 156.201,
+              "end": 156.735
+            },
+            {
+              "word": "mabuntis",
+              "start": 156.782,
+              "end": 157.246
+            },
+            {
+              "word": "ako.",
+              "start": 157.304,
+              "end": 157.943
+            },
+            {
+              "word": "Mahina",
+              "start": 158.546,
+              "end": 158.93
+            },
+            {
+              "word": "akong",
+              "start": 158.953,
+              "end": 159.162
+            },
+            {
+              "word": "tumugón",
+              "start": 159.208,
+              "end": 159.789
+            },
+            {
+              "word": "na",
+              "start": 159.824,
+              "end": 160.021
+            },
+            {
+              "word": "hindi",
+              "start": 160.067,
+              "end": 160.358
+            },
+            {
+              "word": "iyon",
+              "start": 160.392,
+              "end": 160.613
+            },
+            {
+              "word": "mangyayari",
+              "start": 160.671,
+              "end": 161.24
+            },
+            {
+              "word": "dahil",
+              "start": 161.298,
+              "end": 161.542
+            },
+            {
+              "word": "regular",
+              "start": 161.623,
+              "end": 162.041
+            },
+            {
+              "word": "akong",
+              "start": 162.087,
+              "end": 162.296
+            },
+            {
+              "word": "gumagamit",
+              "start": 162.32,
+              "end": 162.877
+            },
+            {
+              "word": "ng",
+              "start": 162.923,
+              "end": 163.039
+            },
+            {
+              "word": "pills;",
+              "start": 163.086,
+              "end": 163.724
+            },
+            {
+              "word": "maliit",
+              "start": 164.235,
+              "end": 164.56
+            },
+            {
+              "word": "pa",
+              "start": 164.607,
+              "end": 164.746
+            },
+            {
+              "word": "ang",
+              "start": 164.804,
+              "end": 164.885
+            },
+            {
+              "word": "aming",
+              "start": 164.955,
+              "end": 165.222
+            },
+            {
+              "word": "anak",
+              "start": 165.28,
+              "end": 165.559
+            },
+            {
+              "word": "at",
+              "start": 165.605,
+              "end": 165.733
+            },
+            {
+              "word": "hindi",
+              "start": 165.779,
+              "end": 166.012
+            },
+            {
+              "word": "pa",
+              "start": 166.081,
+              "end": 166.174
+            },
+            {
+              "word": "namin",
+              "start": 166.221,
+              "end": 166.522
+            },
+            {
+              "word": "gustong",
+              "start": 166.557,
+              "end": 166.906
+            },
+            {
+              "word": "sundan.",
+              "start": 166.952,
+              "end": 167.753
+            },
+            {
+              "word": "Kumuha",
+              "start": 168.264,
+              "end": 168.647
+            },
+            {
+              "word": "si",
+              "start": 168.717,
+              "end": 168.81
+            },
+            {
+              "word": "Mr.",
+              "start": 168.868,
+              "end": 169.262
+            },
+            {
+              "word": "Sy",
+              "start": 169.286,
+              "end": 169.529
+            },
+            {
+              "word": "ng",
+              "start": 169.588,
+              "end": 169.727
+            },
+            {
+              "word": "pera",
+              "start": 169.785,
+              "end": 170.319
+            },
+            {
+              "word": "mula",
+              "start": 170.76,
+              "end": 171.027
+            },
+            {
+              "word": "sa",
+              "start": 171.097,
+              "end": 171.178
+            },
+            {
+              "word": "kanyang",
+              "start": 171.225,
+              "end": 171.573
+            },
+            {
+              "word": "kaha-de-yero",
+              "start": 171.62,
+              "end": 172.746
+            },
+            {
+              "word": "at",
+              "start": 173.257,
+              "end": 173.454
+            },
+            {
+              "word": "iniabot",
+              "start": 173.524,
+              "end": 174
+            },
+            {
+              "word": "sa",
+              "start": 174.035,
+              "end": 174.209
+            },
+            {
+              "word": "akin.",
+              "start": 174.232,
+              "end": 174.952
+            },
+            {
+              "word": "Hindi",
+              "start": 175.463,
+              "end": 175.741
+            },
+            {
+              "word": "ako",
+              "start": 175.788,
+              "end": 175.927
+            },
+            {
+              "word": "makatingin",
+              "start": 175.985,
+              "end": 176.6
             },
             {
               "word": "nang",
-              "start": 206.505,
-              "end": 206.621
+              "start": 176.658,
+              "end": 176.867
             },
             {
-              "word": "nagpaubaya.",
-              "start": 206.668,
-              "end": 207.771
+              "word": "diretso",
+              "start": 176.937,
+              "end": 177.39
+            },
+            {
+              "word": "habang",
+              "start": 177.471,
+              "end": 177.773
+            },
+            {
+              "word": "kinukuha",
+              "start": 177.796,
+              "end": 178.4
+            },
+            {
+              "word": "iyon—humigit-kumulang",
+              "start": 178.481,
+              "end": 180.443
+            },
+            {
+              "word": "limampung",
+              "start": 180.513,
+              "end": 181.035
+            },
+            {
+              "word": "libong",
+              "start": 181.093,
+              "end": 181.453
+            },
+            {
+              "word": "piso",
+              "start": 181.523,
+              "end": 182.045
+            },
+            {
+              "word": "na",
+              "start": 182.324,
+              "end": 182.463
+            },
+            {
+              "word": "bunga",
+              "start": 182.521,
+              "end": 182.928
+            },
+            {
+              "word": "ng",
+              "start": 183.021,
+              "end": 183.16
+            },
+            {
+              "word": "panandaliang",
+              "start": 183.218,
+              "end": 183.915
+            },
+            {
+              "word": "tawag",
+              "start": 183.984,
+              "end": 184.414
+            },
+            {
+              "word": "ng",
+              "start": 184.472,
+              "end": 184.611
+            },
+            {
+              "word": "laman.",
+              "start": 184.669,
+              "end": 185.389
+            },
+            {
+              "word": "Dali-dali",
+              "start": 185.9,
+              "end": 186.527
+            },
+            {
+              "word": "akong",
+              "start": 186.573,
+              "end": 186.817
+            },
+            {
+              "word": "umalis",
+              "start": 186.887,
+              "end": 187.34
+            },
+            {
+              "word": "nang",
+              "start": 187.432,
+              "end": 187.56
+            },
+            {
+              "word": "walang",
+              "start": 187.607,
+              "end": 187.862
+            },
+            {
+              "word": "paalam.",
+              "start": 187.92,
+              "end": 188.733
+            },
+            {
+              "word": "Isang",
+              "start": 189.058,
+              "end": 189.383
+            },
+            {
+              "word": "pabulong",
+              "start": 189.441,
+              "end": 189.905
+            },
+            {
+              "word": "na",
+              "start": 189.963,
+              "end": 190.184
+            },
+            {
+              "word": "“Salamat”",
+              "start": 190.428,
+              "end": 191.449
+            },
+            {
+              "word": "na",
+              "start": 191.693,
+              "end": 191.821
+            },
+            {
+              "word": "lamang",
+              "start": 191.879,
+              "end": 192.239
+            },
+            {
+              "word": "ang",
+              "start": 192.297,
+              "end": 192.506
+            },
+            {
+              "word": "narinig",
+              "start": 192.599,
+              "end": 193.075
+            },
+            {
+              "word": "ko",
+              "start": 193.11,
+              "end": 193.435
+            },
+            {
+              "word": "mula",
+              "start": 193.818,
+              "end": 194.109
+            },
+            {
+              "word": "sa",
+              "start": 194.167,
+              "end": 194.283
+            },
+            {
+              "word": "kanya.",
+              "start": 194.329,
+              "end": 194.875
+            },
+            {
+              "word": "Nakaligtás",
+              "start": 195.316,
+              "end": 196.071
+            },
+            {
+              "word": "ang",
+              "start": 196.187,
+              "end": 196.291
+            },
+            {
+              "word": "anak",
+              "start": 196.349,
+              "end": 196.558
+            },
+            {
+              "word": "ko",
+              "start": 196.582,
+              "end": 196.849
+            },
+            {
+              "word": "sa",
+              "start": 196.965,
+              "end": 197.092
+            },
+            {
+              "word": "tiyak",
+              "start": 197.162,
+              "end": 197.429
+            },
+            {
+              "word": "na",
+              "start": 197.51,
+              "end": 197.58
+            },
+            {
+              "word": "kapahamakan",
+              "start": 197.638,
+              "end": 198.451
+            },
+            {
+              "word": "dahil",
+              "start": 198.532,
+              "end": 198.857
+            },
+            {
+              "word": "sa",
+              "start": 199.182,
+              "end": 199.368
+            },
+            {
+              "word": "perang",
+              "start": 199.426,
+              "end": 199.821
+            },
+            {
+              "word": "iyon.",
+              "start": 199.89,
+              "end": 200.448
+            },
+            {
+              "word": "Nakakuha",
+              "start": 200.831,
+              "end": 201.342
+            },
+            {
+              "word": "na",
+              "start": 201.4,
+              "end": 201.469
+            },
+            {
+              "word": "rin",
+              "start": 201.527,
+              "end": 201.655
+            },
+            {
+              "word": "ng",
+              "start": 201.678,
+              "end": 201.76
+            },
+            {
+              "word": "trabaho",
+              "start": 201.794,
+              "end": 202.34
+            },
+            {
+              "word": "ang",
+              "start": 202.387,
+              "end": 202.479
+            },
+            {
+              "word": "mister",
+              "start": 202.526,
+              "end": 202.851
+            },
+            {
+              "word": "ko",
+              "start": 202.932,
+              "end": 203.246
+            },
+            {
+              "word": "sa",
+              "start": 203.571,
+              "end": 203.722
+            },
+            {
+              "word": "isang",
+              "start": 203.756,
+              "end": 203.977
+            },
+            {
+              "word": "malaking",
+              "start": 204.024,
+              "end": 204.43
+            },
+            {
+              "word": "kumpanya.",
+              "start": 204.476,
+              "end": 205.393
+            },
+            {
+              "word": "Si",
+              "start": 205.777,
+              "end": 205.893
+            },
+            {
+              "word": "Mr.",
+              "start": 205.951,
+              "end": 206.404
+            },
+            {
+              "word": "Sy?",
+              "start": 206.427,
+              "end": 207.019
+            },
+            {
+              "word": "Balita",
+              "start": 207.344,
+              "end": 207.727
+            },
+            {
+              "word": "ko",
+              "start": 207.797,
+              "end": 207.948
+            },
+            {
+              "word": "ay",
+              "start": 208.017,
+              "end": 208.25
+            },
+            {
+              "word": "inatake",
+              "start": 208.575,
+              "end": 209.19
+            },
+            {
+              "word": "siya",
+              "start": 209.248,
+              "end": 209.364
+            },
+            {
+              "word": "sa",
+              "start": 209.422,
+              "end": 209.527
+            },
+            {
+              "word": "puso",
+              "start": 209.573,
+              "end": 210.049
+            },
+            {
+              "word": "noong",
+              "start": 210.13,
+              "end": 210.363
+            },
+            {
+              "word": "gabing",
+              "start": 210.409,
+              "end": 210.699
+            },
+            {
+              "word": "iyon,",
+              "start": 210.757,
+              "end": 211.257
+            },
+            {
+              "word": "pagkatapos",
+              "start": 211.431,
+              "end": 212.058
+            },
+            {
+              "word": "ng",
+              "start": 212.139,
+              "end": 212.232
+            },
+            {
+              "word": "aming",
+              "start": 212.267,
+              "end": 212.546
+            },
+            {
+              "word": "pagkikita.",
+              "start": 212.604,
+              "end": 213.451
+            },
+            {
+              "word": "Siguro",
+              "start": 213.66,
+              "end": 214.113
+            },
+            {
+              "word": "ay",
+              "start": 214.159,
+              "end": 214.345
+            },
+            {
+              "word": "hindi",
+              "start": 214.461,
+              "end": 214.786
+            },
+            {
+              "word": "kinaya",
+              "start": 214.844,
+              "end": 215.32
+            },
+            {
+              "word": "ng",
+              "start": 215.379,
+              "end": 215.495
+            },
+            {
+              "word": "kanyang",
+              "start": 215.529,
+              "end": 215.808
+            },
+            {
+              "word": "katawan.",
+              "start": 215.843,
+              "end": 216.493
+            },
+            {
+              "word": "Para",
+              "start": 216.667,
+              "end": 216.899
+            },
+            {
+              "word": "sa",
+              "start": 216.957,
+              "end": 217.097
+            },
+            {
+              "word": "akin,",
+              "start": 217.155,
+              "end": 217.573
+            },
+            {
+              "word": "ang",
+              "start": 217.596,
+              "end": 217.735
+            },
+            {
+              "word": "lihim",
+              "start": 217.817,
+              "end": 218.153
+            },
+            {
+              "word": "na",
+              "start": 218.211,
+              "end": 218.293
+            },
+            {
+              "word": "karanasang",
+              "start": 218.339,
+              "end": 218.873
+            },
+            {
+              "word": "ito",
+              "start": 218.931,
+              "end": 219.152
+            },
+            {
+              "word": "ay",
+              "start": 219.221,
+              "end": 219.314
+            },
+            {
+              "word": "mananatiling",
+              "start": 219.384,
+              "end": 220.406
+            },
+            {
+              "word": "nakabaón",
+              "start": 220.615,
+              "end": 221.23
+            },
+            {
+              "word": "sa",
+              "start": 221.311,
+              "end": 221.427
+            },
+            {
+              "word": "limot",
+              "start": 221.485,
+              "end": 221.903
+            },
+            {
+              "word": "hangga't",
+              "start": 221.961,
+              "end": 222.252
+            },
+            {
+              "word": "ako’y",
+              "start": 222.31,
+              "end": 222.53
+            },
+            {
+              "word": "nabubuhay.",
+              "start": 222.577,
+              "end": 223.447
+            },
+            {
+              "word": "Ipinangako",
+              "start": 223.622,
+              "end": 224.365
+            },
+            {
+              "word": "ko",
+              "start": 224.399,
+              "end": 224.481
+            },
+            {
+              "word": "sa",
+              "start": 224.539,
+              "end": 224.62
+            },
+            {
+              "word": "sarili",
+              "start": 224.678,
+              "end": 225.084
+            },
+            {
+              "word": "ko",
+              "start": 225.143,
+              "end": 225.247
+            },
+            {
+              "word": "na",
+              "start": 225.305,
+              "end": 225.502
+            },
+            {
+              "word": "hindi",
+              "start": 225.677,
+              "end": 226.234
+            },
+            {
+              "word": "ko",
+              "start": 226.35,
+              "end": 226.478
+            },
+            {
+              "word": "na",
+              "start": 226.547,
+              "end": 226.629
+            },
+            {
+              "word": "ito",
+              "start": 226.687,
+              "end": 226.919
+            },
+            {
+              "word": "uulitin",
+              "start": 226.989,
+              "end": 227.743
+            },
+            {
+              "word": "at",
+              "start": 228.022,
+              "end": 228.289
+            },
+            {
+              "word": "habambuhay",
+              "start": 228.8,
+              "end": 229.473
+            },
+            {
+              "word": "na",
+              "start": 229.531,
+              "end": 229.612
+            },
+            {
+              "word": "lang",
+              "start": 229.659,
+              "end": 229.81
+            },
+            {
+              "word": "iaalay",
+              "start": 229.891,
+              "end": 230.483
+            },
+            {
+              "word": "ang",
+              "start": 230.541,
+              "end": 230.623
+            },
+            {
+              "word": "aking",
+              "start": 230.681,
+              "end": 230.994
+            },
+            {
+              "word": "sarili",
+              "start": 231.052,
+              "end": 231.598
+            },
+            {
+              "word": "sa",
+              "start": 231.691,
+              "end": 231.83
+            },
+            {
+              "word": "aking",
+              "start": 231.876,
+              "end": 232.225
+            },
+            {
+              "word": "mapagmahal",
+              "start": 232.26,
+              "end": 232.782
+            },
+            {
+              "word": "na",
+              "start": 232.84,
+              "end": 232.956
+            },
+            {
+              "word": "asawa.",
+              "start": 232.979,
+              "end": 233.571
+            },
+            {
+              "word": "Ang",
+              "start": 234.082,
+              "end": 234.233
+            },
+            {
+              "word": "nangyari",
+              "start": 234.291,
+              "end": 234.686
+            },
+            {
+              "word": "ay",
+              "start": 234.709,
+              "end": 234.767
+            },
+            {
+              "word": "isang",
+              "start": 234.825,
+              "end": 235.092
+            },
+            {
+              "word": "bangungot",
+              "start": 235.15,
+              "end": 235.893
+            },
+            {
+              "word": "na",
+              "start": 236.01,
+              "end": 236.16
+            },
+            {
+              "word": "kailangan",
+              "start": 236.242,
+              "end": 236.741
+            },
+            {
+              "word": "ko",
+              "start": 236.799,
+              "end": 236.88
+            },
+            {
+              "word": "nang",
+              "start": 236.938,
+              "end": 237.078
+            },
+            {
+              "word": "talikuran.",
+              "start": 237.136,
+              "end": 238.192
             }
           ],
           "chunking": {
@@ -2044,9 +2594,9 @@
         "id": "layer_hook",
         "type": "KaraokeText",
         "startFrame": 0,
-        "durationInFrames": 6264,
+        "durationInFrames": 7176,
         "props": {
-          "text": "Patagong Pagnanais cont. (Part 2)",
+          "text": "Patagong Pagnanais cont. (Part 3)",
           "style": {
             "fontFamily": "Anton, Impact, Roboto, sans-serif",
             "fontSize": 90,

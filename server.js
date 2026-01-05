@@ -134,6 +134,12 @@ const renderSpecObjectSchema = z.object({
           highlightColor: z.string().optional(),
         }),
       }),
+      baseLayerSchema.extend({
+        type: z.literal("Shape"),
+        props: z.object({
+          style: styleSchema.optional(),
+        }),
+      }),
     ])
   ),
 });
