@@ -40,7 +40,7 @@ export const MasterComposition: React.FC<RenderSpecInput> = (rawProps) => {
           return null;
         }
 
-        const zIndex = layer.type === 'KaraokeText' ? 20 : layer.type === 'Audio' ? 5 : 0;
+        const zIndex = layer.type === 'KaraokeText' ? 20 : layer.type === 'Audio' ? 5 : layer.type === 'Shape' ? 2 : 0;
 
         return (
           <Sequence

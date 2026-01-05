@@ -62,10 +62,18 @@ const karaokeLayerSchema = baseLayerSchema.extend({
   }),
 });
 
+const shapeLayerSchema = baseLayerSchema.extend({
+  type: z.literal('Shape'),
+  props: z.object({
+    style: styleSchema.optional(),
+  }),
+});
+
 const layerSchema = z.discriminatedUnion('type', [
   videoLayerSchema,
   audioLayerSchema,
   karaokeLayerSchema,
+  shapeLayerSchema,
 ]);
 
 const configSchema = z.object({
@@ -94,6 +102,7 @@ export type AssetMap = z.infer<typeof assetsSchema>;
 export type VideoLayer = z.infer<typeof videoLayerSchema>;
 export type AudioLayer = z.infer<typeof audioLayerSchema>;
 export type KaraokeLayer = z.infer<typeof karaokeLayerSchema>;
+export type ShapeLayer = z.infer<typeof shapeLayerSchema>;
 export type Layer = z.infer<typeof layerSchema>;
 export type RenderSpec = z.infer<typeof renderSpecObjectSchema>;
 export type RenderSpecInput = z.infer<typeof renderSpecInputSchema>;

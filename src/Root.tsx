@@ -25,13 +25,14 @@ const normalizeSpec = (value: RenderSpecInput | undefined): RenderSpec => {
 
 export const RemotionRoot: React.FC = () => {
   return (
-    <Composition<RenderSpecInput>
+    <Composition
       id="MasterComposition"
-      component={MasterComposition}
+      component={MasterComposition as any}
       durationInFrames={DEFAULT_SPEC.config.durationInFrames}
       fps={DEFAULT_SPEC.config.fps}
       width={DEFAULT_SPEC.config.width}
       height={DEFAULT_SPEC.config.height}
+      defaultProps={DEFAULT_SPEC}
       calculateMetadata={({props}) => {
         const spec = normalizeSpec(props as RenderSpecInput);
         const durationInFrames = resolveDuration(spec);

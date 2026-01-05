@@ -7,6 +7,7 @@
     "studio": "remotion studio",
     "build": "remotion render MasterComposition out/video.mp4 --props-file=./test-render.json",
     "render": "npx remotion render src/index.ts MasterComposition out/video.mp4 --props \"$(cat test-render.json)\" --overwrite",
+    "render:test": "node render-test.js",
     "upgrade": "remotion upgrade",
     "postinstall": "patch-package",
     "test": "vitest run",
