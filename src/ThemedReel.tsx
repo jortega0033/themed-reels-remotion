@@ -16,7 +16,29 @@ export interface ThemedReelProps {
   audioUrl: string;
   elevenLabsAlignment: ElevenLabsAlignment;
   hookText?: string;
-  type?: 'dark' | 'romantic' | 'entertainment' | 'narration' | 'corporate' | 'horror' | 'scifi';
+  // Hook styling
+  hookFontFamily?: string;
+  hookColor?: string;
+  hookShadow?: string;
+  hookBackground?: string;
+  hookBorder?: string;
+  // Caption styling
+  captionActiveColor?: string;
+  captionInactiveColor?: string;
+  captionActiveShadow?: string;
+  captionInactiveShadow?: string;
+  captionFontFamily?: string;
+  captionFontSize?: string;
+  captionLetterSpacing?: string;
+  captionUppercase?: boolean;
+  captionDisplayMode?: 'single' | 'chunk';
+  captionPauseThresholdMs?: number;
+  captionMaxChunkSize?: number;
+  // Overlay styling
+  overlayType?: 'gradient' | 'scrim' | 'none';
+  overlayGradient?: string;
+  scrimColor?: string;
+  scrimOpacity?: number;
 }
 
 export const ThemedReel: React.FC<ThemedReelProps> = ({
@@ -24,7 +46,29 @@ export const ThemedReel: React.FC<ThemedReelProps> = ({
   audioUrl,
   elevenLabsAlignment,
   hookText,
-  type = 'dark',
+  // Hook styling with defaults (dark theme)
+  hookFontFamily = 'Cinzel, "Times New Roman", serif',
+  hookColor = '#e63946',
+  hookShadow = '0 0 32px rgba(230,57,70,0.55), 0 0 72px rgba(230,57,70,0.35)',
+  hookBackground = 'linear-gradient(145deg, rgba(12,14,18,0.92), rgba(20,24,32,0.92))',
+  hookBorder = '2px solid rgba(230,57,70,0.35)',
+  // Caption styling with defaults (dark theme)
+  captionActiveColor = '#e63946',
+  captionInactiveColor = '#cfd0d6',
+  captionActiveShadow = '0 0 24px rgba(230,57,70,0.55), 0 0 60px rgba(230,57,70,0.35)',
+  captionInactiveShadow = '0 0 14px rgba(0,0,0,0.85)',
+  captionFontFamily = 'Cinzel, "Times New Roman", serif',
+  captionFontSize = '84px',
+  captionLetterSpacing = '0.04em',
+  captionUppercase = true,
+  captionDisplayMode = 'chunk',
+  captionPauseThresholdMs,
+  captionMaxChunkSize,
+  // Overlay styling with defaults
+  overlayType = 'gradient',
+  overlayGradient = 'linear-gradient(180deg, rgba(0,0,0,0.82) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.9) 100%)',
+  scrimColor = '#000000',
+  scrimOpacity = 0.3,
 }) => {
   const frame = useCurrentFrame();
   const { durationInFrames, fps } = useVideoConfig();
@@ -46,158 +90,24 @@ export const ThemedReel: React.FC<ThemedReelProps> = ({
   // Calculate duration per video
   const framesPerVideo = Math.floor(actualDuration / videoUrls.length);
 
-  const theme = useMemo(() => {
-    const common = {
-      overlay: 'linear-gradient(180deg, rgba(0,0,0,0.82) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.9) 100%)',
-    } as const;
-
-    const map = {
-      dark: {
-        hook: {
-          fontFamily: 'Cinzel, "Times New Roman", serif',
-          color: '#e63946',
-          shadow: '0 0 32px rgba(230,57,70,0.55), 0 0 72px rgba(230,57,70,0.35)',
-          background: 'linear-gradient(145deg, rgba(12,14,18,0.92), rgba(20,24,32,0.92))',
-          border: '2px solid rgba(230,57,70,0.35)',
-        },
-        captions: {
-          activeColor: '#e63946',
-          inactiveColor: '#cfd0d6',
-          activeShadow: '0 0 24px rgba(230,57,70,0.55), 0 0 60px rgba(230,57,70,0.35)',
-          inactiveShadow: '0 0 14px rgba(0,0,0,0.85)',
-          fontFamily: 'Cinzel, "Times New Roman", serif',
-          fontSize: '84px',
-          letterSpacing: '0.04em',
-          uppercase: true,
-          displayMode: 'chunk' as const,
-        },
-      },
-      'romantic': {
-        hook: {
-          fontFamily: 'Playfair Display, "Times New Roman", serif',
-          color: '#f7c6c7',
-          shadow: '0 0 28px rgba(255,182,193,0.55)',
-          background: 'linear-gradient(145deg, rgba(44,16,32,0.9), rgba(68,20,36,0.9))',
-          border: '2px solid rgba(255,182,193,0.35)',
-        },
-        captions: {
-          activeColor: '#f7c6c7',
-          inactiveColor: '#e4cfd8',
-          activeShadow: '0 0 24px rgba(247,198,199,0.55)',
-          inactiveShadow: '0 0 14px rgba(0,0,0,0.75)',
-          fontFamily: 'Playfair Display, "Times New Roman", serif',
-          fontSize: '84px',
-          letterSpacing: '0.02em',
-          uppercase: false,
-          displayMode: 'chunk' as const,
-          pauseThresholdMs: 260,
-          maxChunkSize: 10,
-        },
-      },
-      entertainment: {
-        hook: {
-          fontFamily: 'Montserrat, Arial, sans-serif',
-          color: '#3cf5ff',
-          shadow: '0 0 28px rgba(60,245,255,0.6), 0 0 52px rgba(255,0,180,0.35)',
-          background: 'linear-gradient(145deg, rgba(10,12,30,0.9), rgba(12,14,26,0.9))',
-          border: '2px solid rgba(60,245,255,0.35)',
-        },
-        captions: {
-          activeColor: '#3cf5ff',
-          inactiveColor: '#d8dde7',
-          activeShadow: '0 0 24px rgba(60,245,255,0.6), 0 0 36px rgba(255,0,180,0.35)',
-          inactiveShadow: '0 0 12px rgba(0,0,0,0.8)',
-          fontFamily: 'Montserrat, Arial, sans-serif',
-          fontSize: '84px',
-          letterSpacing: '0.02em',
-          uppercase: true,
-          displayMode: 'chunk' as const,
-        },
-      },
-      narration: {
-        hook: {
-          fontFamily: 'Merriweather, "Times New Roman", serif',
-          color: '#f0e6d2',
-          shadow: '0 0 18px rgba(0,0,0,0.75)',
-          background: 'linear-gradient(145deg, rgba(26,24,22,0.9), rgba(30,30,28,0.9))',
-          border: '2px solid rgba(240,230,210,0.3)',
-        },
-        captions: {
-          activeColor: '#f0e6d2',
-          inactiveColor: '#b8b0a2',
-          activeShadow: '0 0 12px rgba(0,0,0,0.8)',
-          inactiveShadow: '0 0 10px rgba(0,0,0,0.65)',
-          fontFamily: 'Merriweather, "Times New Roman", serif',
-          fontSize: '72px',
-          letterSpacing: '0.01em',
-          uppercase: false,
-          displayMode: 'single' as const,
-        },
-      },
-      corporate: {
-        hook: {
-          fontFamily: 'Inter, Arial, sans-serif',
-          color: '#7fd1ff',
-          shadow: '0 0 18px rgba(0,0,0,0.65)',
-          background: 'linear-gradient(145deg, rgba(10,18,30,0.9), rgba(14,20,32,0.9))',
-          border: '2px solid rgba(127,209,255,0.25)',
-        },
-        captions: {
-          activeColor: '#7fd1ff',
-          inactiveColor: '#d6e4f0',
-          activeShadow: '0 0 18px rgba(127,209,255,0.45)',
-          inactiveShadow: '0 0 10px rgba(0,0,0,0.6)',
-          fontFamily: 'Inter, Arial, sans-serif',
-          fontSize: '82px',
-          letterSpacing: '0.01em',
-          uppercase: false,
-          displayMode: 'chunk' as const,
-        },
-      },
-      horror: {
-        hook: {
-          fontFamily: 'Cormorant Garamond, "Times New Roman", serif',
-          color: '#f7f1e3',
-          shadow: '0 0 26px rgba(255,255,255,0.35), 0 0 48px rgba(200,0,0,0.45)',
-          background: 'linear-gradient(145deg, rgba(8,8,8,0.92), rgba(18,12,12,0.92))',
-          border: '2px solid rgba(200,0,0,0.35)',
-        },
-        captions: {
-          activeColor: '#f7f1e3',
-          inactiveColor: '#d9d2c8',
-          activeShadow: '0 0 22px rgba(255,255,255,0.45), 0 0 38px rgba(200,0,0,0.45)',
-          inactiveShadow: '0 0 12px rgba(0,0,0,0.8)',
-          fontFamily: 'Cormorant Garamond, "Times New Roman", serif',
-          fontSize: '84px',
-          letterSpacing: '0.02em',
-          uppercase: true,
-          displayMode: 'chunk' as const,
-        },
-      },
-      scifi: {
-        hook: {
-          fontFamily: 'Orbitron, Arial, sans-serif',
-          color: '#7fffe1',
-          shadow: '0 0 26px rgba(127,255,225,0.55), 0 0 48px rgba(80,180,255,0.4)',
-          background: 'linear-gradient(145deg, rgba(6,14,26,0.9), rgba(10,20,36,0.9))',
-          border: '2px solid rgba(127,255,225,0.3)',
-        },
-        captions: {
-          activeColor: '#7fffe1',
-          inactiveColor: '#d5e7ff',
-          activeShadow: '0 0 22px rgba(127,255,225,0.55), 0 0 36px rgba(80,180,255,0.4)',
-          inactiveShadow: '0 0 12px rgba(0,0,0,0.75)',
-          fontFamily: 'Orbitron, Arial, sans-serif',
-          fontSize: '84px',
-          letterSpacing: '0.08em',
-          uppercase: true,
-          displayMode: 'chunk' as const,
-        },
-      },
+  // Compute overlay style based on type
+  const overlayStyle = useMemo(() => {
+    if (overlayType === 'none') {
+      return null;
+    }
+    
+    if (overlayType === 'scrim') {
+      return {
+        backgroundColor: scrimColor,
+        opacity: scrimOpacity,
+      };
+    }
+    
+    // Default: gradient
+    return {
+      background: overlayGradient,
     };
-
-    return map[type] ?? map.dark;
-  }, [type]);
+  }, [overlayType, overlayGradient, scrimColor, scrimOpacity]);
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#000' }}>
@@ -229,12 +139,10 @@ export const ThemedReel: React.FC<ThemedReelProps> = ({
         </Series>
       </AbsoluteFill>
 
-      {/* Gradient Overlays for Readability */}
-      <AbsoluteFill
-        style={{
-          background: theme.overlay,
-        }}
-      />
+      {/* Overlay for Readability (Gradient or Scrim) */}
+      {overlayStyle && (
+        <AbsoluteFill style={overlayStyle} />
+      )}
 
       {/* Fade Out at End */}
       <AbsoluteFill
@@ -259,18 +167,18 @@ export const ThemedReel: React.FC<ThemedReelProps> = ({
         >
           <div
             style={{
-              fontFamily: theme.hook.fontFamily,
+              fontFamily: hookFontFamily,
               fontWeight: 800,
               fontSize: '64px',
               letterSpacing: '0.035em',
               textTransform: 'uppercase',
-              color: theme.hook.color,
+              color: hookColor,
               textAlign: 'center',
-              textShadow: theme.hook.shadow,
-              background: theme.hook.background,
+              textShadow: hookShadow,
+              background: hookBackground,
               borderRadius: '20px',
               padding: '30px 42px',
-              border: theme.hook.border,
+              border: hookBorder,
               boxShadow: '0 12px 40px rgba(0,0,0,0.6)',
               maxWidth: '960px',
             }}
@@ -283,17 +191,17 @@ export const ThemedReel: React.FC<ThemedReelProps> = ({
       {/* Karaoke Captions */}
       <KaraokeCaptions
         words={words}
-        displayMode={theme.captions.displayMode}
-        activeColor={theme.captions.activeColor}
-        inactiveColor={theme.captions.inactiveColor}
-        activeShadow={theme.captions.activeShadow}
-        inactiveShadow={theme.captions.inactiveShadow}
-        fontFamily={theme.captions.fontFamily}
-        fontSize={theme.captions.fontSize}
-        letterSpacing={theme.captions.letterSpacing}
-        uppercase={theme.captions.uppercase}
-        pauseThresholdMs={theme.captions.pauseThresholdMs}
-        maxChunkSize={theme.captions.maxChunkSize}
+        displayMode={captionDisplayMode}
+        activeColor={captionActiveColor}
+        inactiveColor={captionInactiveColor}
+        activeShadow={captionActiveShadow}
+        inactiveShadow={captionInactiveShadow}
+        fontFamily={captionFontFamily}
+        fontSize={captionFontSize}
+        letterSpacing={captionLetterSpacing}
+        uppercase={captionUppercase}
+        pauseThresholdMs={captionPauseThresholdMs}
+        maxChunkSize={captionMaxChunkSize}
       />
 
       {/* Audio */}
