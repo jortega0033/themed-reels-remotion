@@ -264,11 +264,34 @@ const uploadToGcs = async (localPath) => {
   return { cloudUrl, signedUrl, publicUrl };
 };
 
+const sendWebhook = async (webhookUrl, payload) => {
+  if (!webhookUrl) return;
+  
+  try {
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    
+    if (!response.ok) {
+      console.error(`Webhook notification failed: ${response.status} ${response.statusText}`);
+    } else {
+      console.log(`Webhook notification sent successfully to ${webhookUrl}`);
+    }
+  } catch (err) {
+    console.error('Webhook notification error:', err);
+  }
+};
+
 // Simple in-memory job store (per-instance). For production, back with a DB or queue.
 const jobs = new Map();
 
 const startJob = async (jobId, inputProps) => {
   const createdAt = Date.now();
+  const normalized = normalizeSpecInput(inputProps);
+  const webhookUrl = normalized?.config?.webhookUrl;
+  
   jobs.set(jobId, { status: "processing", createdAt });
   
   try {
@@ -295,16 +318,37 @@ const startJob = async (jobId, inputProps) => {
       console.error(`[${jobId}] GCS upload failed:`, uploadErr);
     }
 
-    jobs.set(jobId, {
+    const jobData = {
       status: "completed",
       output: cloudUrl ? null : output,
       cloudUrl,
       signedUrl,
       publicUrl,
       createdAt,
+    };
+    
+    jobs.set(jobId, jobData);
+    
+    // Send webhook notification on success
+    await sendWebhook(webhookUrl, {
+      jobId,
+      status: "completed",
+      cloudUrl,
+      signedUrl,
+      publicUrl,
+      createdAt,
     });
   } catch (err) {
-    jobs.set(jobId, { status: "failed", error: String(err), createdAt });
+    const jobData = { status: "failed", error: String(err), createdAt };
+    jobs.set(jobId, jobData);
+    
+    // Send webhook notification on failure
+    await sendWebhook(webhookUrl, {
+      jobId,
+      status: "failed",
+      error: String(err),
+      createdAt,
+    });
   }
 };
 

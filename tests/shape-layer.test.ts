@@ -1,3 +1,4 @@
+import {describe, it, expect} from 'vitest';
 import {renderSpecObjectSchema} from '../src/types/schema';
 
 describe('Shape layer (overlay scrim) validation', () => {
