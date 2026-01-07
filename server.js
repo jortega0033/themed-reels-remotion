@@ -425,7 +425,6 @@ const startJob = async (jobId, inputProps, retryCount = 0) => {
       await sendWebhook(webhookUrl, {
         jobId,
         status: "completed",
-        success: true,
         cloudUrl,
         signedUrl,
         publicUrl,
@@ -484,7 +483,6 @@ const startJob = async (jobId, inputProps, retryCount = 0) => {
       await sendWebhook(webhookUrl, {
         jobId,
         status: "failed",
-        success: false,
         error: String(err),
         errorMessage: err.message,
         createdAt,
