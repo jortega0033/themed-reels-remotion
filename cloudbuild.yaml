@@ -57,7 +57,7 @@ steps:
       - '--no-cpu-throttling'
       - '--allow-unauthenticated'
       - '--set-env-vars'
-      - 'GCS_BUCKET=n8n-server-482722-renders,GCS_PREFIX=renders'
+      - 'GCS_BUCKET=n8n-server-482722-renders,GCS_PREFIX=renders,JOB_TIMEOUT_MS=3000000,MAX_RETRIES=3,RETRY_DELAY_MS=5000'
 
 images:
   - 'gcr.io/$PROJECT_ID/remotion-renderer:$COMMIT_SHA'
