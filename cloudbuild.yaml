@@ -44,7 +44,7 @@ steps:
       - '--platform'
       - 'managed'
       - '--memory'
-      - '32Gi'
+      - '16Gi'
       - '--cpu'
       - '8'
       - '--concurrency'
