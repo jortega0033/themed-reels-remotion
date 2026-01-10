@@ -32,7 +32,11 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 COPY patches ./patches
-RUN npm ci --include=dev
+RUN npm ci --include=dev && \
+    echo "Verifying patches applied..." && \
+    grep -q "timeout: 300000" node_modules/@remotion/renderer/dist/open-browser.js && \
+    echo "✅ Remotion patches successfully applied (browser timeout: 300s)" || \
+    echo "⚠️  WARNING: Patches may not have been applied!"
 
 COPY . .
 

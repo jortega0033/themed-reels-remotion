@@ -228,6 +228,7 @@ const renderJob = async (jobId, inputProps) => {
     envVariables: {},
     logLevel: "info",
     timeoutInMilliseconds: 48 * 60 * 1000, // 48 minutes for render, leaves buffer
+    delayRenderTimeoutInMilliseconds: 45 * 60 * 1000, // 45 minutes for slow frames/assets
     onProgress: ({ renderedFrames, encodedFrames, stitchStage }) => {
       const total = composition.durationInFrames;
       const elapsedMs = Date.now() - renderStartTime;
