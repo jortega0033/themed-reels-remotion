@@ -177,25 +177,23 @@ const renderJob = async (jobId, inputProps) => {
   }
   const serveUrl = getServeUrl();
   
-  const comps = await withTimeout(
-    getCompositions(serveUrl, {
-      inputProps: normalized,
-      timeoutInMilliseconds: 300000, // 5 min for loading external assets
-      browserExecutable: CHROME_EXECUTABLE,
-      chromiumOptions: {
-        args: [
-          "--no-sandbox",
-          "--disable-setuid-sandbox",
-          "--disable-dev-shm-usage",
-          "--disable-gpu",
-          "--disable-software-rasterizer",
-          "--disable-dbus",
-        ],
-      },
-    }),
-    15 * 60 * 1000,
-    "getCompositions timed out after 900s"
-  );
+  // Don't wrap getCompositions in withTimeout - let it use its internal timeout
+  // which is already set to 300000ms (5 minutes) for asset loading
+  const comps = await getCompositions(serveUrl, {
+    inputProps: normalized,
+    timeoutInMilliseconds: 300000, // 5 min for loading external assets
+    browserExecutable: CHROME_EXECUTABLE,
+    chromiumOptions: {
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-gpu",
+        "--disable-software-rasterizer",
+        "--disable-dbus",
+      ],
+    },
+  });
   
   const composition = comps.find((c) => c.id === COMPOSITION_ID);
   if (!composition) throw new Error(`Composition ${COMPOSITION_ID} not found`);
